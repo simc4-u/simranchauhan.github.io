@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Your Name - Personal Website</title>
     <style>
         /* Reset and base styles */
         * {
@@ -11,504 +11,315 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
-
-        a {
-            text-decoration: none;
+        
+        /* Header styles */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #0366d6;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             color: #0366d6;
         }
-
-        /* Header and navigation */
-        header {
-            background-color: #24292e;
-            color: white;
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #586069;
+            margin-bottom: 15px;
         }
-
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav {
+        
+        /* Social links */
+        .social-links {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            font-weight: 500;
+        
+        .social-links a {
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 1.1rem;
             transition: color 0.3s;
         }
-
-        .nav-links a:hover {
-            color: #58a6ff;
+        
+        .social-links a:hover {
+            color: #044289;
+            text-decoration: underline;
         }
-
-        /* Hero section */
-        .hero {
-            padding: 5rem 0;
-            text-align: center;
-            background-color: #0366d6;
-            color: white;
+        
+        /* Section styles */
+        section {
+            margin-bottom: 40px;
         }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: white;
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaecef;
             color: #0366d6;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s;
         }
-
-        .btn:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-2px);
+        
+        p {
+            margin-bottom: 15px;
         }
-
-        /* About section */
-        .about {
-            padding: 5rem 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
-
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        /* Projects section */
+        
+        /* Project cards */
         .projects {
-            padding: 5rem 0;
-            background-color: #f8f9fa;
-        }
-
-        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 20px;
         }
-
+        
         .project-card {
-            background-color: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
+        
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .project-info p {
-            color: #586069;
-            margin-bottom: 1rem;
-        }
-
-        .project-links a {
-            margin-right: 1rem;
-            font-weight: 500;
-        }
-
-        /* Skills section */
-        .skills {
-            padding: 5rem 0;
-            background-color: white;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .skill-item {
-            padding: 1.5rem;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .skill-item:hover {
-            background-color: #e1e4e8;
-            transform: translateY(-2px);
-        }
-
-        .skill-item i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        
+        .project-card h3 {
+            margin-bottom: 10px;
             color: #0366d6;
         }
-
-        /* Contact section */
-        .contact {
-            padding: 5rem 0;
-            background-color: #f8f9fa;
+        
+        .project-card p {
+            font-size: 0.9rem;
+            color: #586069;
         }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        
+        .project-links {
+            margin-top: 15px;
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
+        
+        .project-links a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #0366d6;
+            font-size: 0.9rem;
         }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+        
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
+        
+        .skill-tag {
+            background-color: #f1f8ff;
+            color: #0366d6;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
         input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #e1e4e8;
+            border-radius: 4px;
             font-family: inherit;
             font-size: 1rem;
         }
-
+        
         textarea {
-            height: 150px;
+            min-height: 100px;
             resize: vertical;
         }
-
+        
         button {
             background-color: #0366d6;
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 1rem;
             transition: background-color 0.3s;
         }
-
+        
         button:hover {
-            background-color: #0256b9;
+            background-color: #044289;
         }
-
+        
         /* Footer */
         footer {
-            background-color: #24292e;
-            color: white;
-            padding: 2rem 0;
             text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+            color: #586069;
+            font-size: 0.9rem;
         }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 1rem;
-        }
-
-        .social-links li {
-            margin: 0 1rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #58a6ff;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .projects {
+                grid-template-columns: 1fr;
             }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            
+            h1 {
+                font-size: 2rem;
             }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .about-image, .about-text {
-                flex: 1 1 100%;
+            
+            .profile-photo {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
-    <!-- Font Awesome for icons (you can add this) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header and Navigation -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">YourName</div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <img src="/api/placeholder/150/150" alt="Your Photo" class="profile-photo">
+        <h1>Your Name</h1>
+        <p class="tagline">Software Developer | Computer Science Student | Web Enthusiast</p>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+            <a href="mailto:your.email@example.com">Email</a>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Hello, I'm Your Name</h1>
-            <p>I'm a developer/designer/student passionate about creating beautiful and functional web experiences.</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm a passionate software developer and computer science student with a focus on web development and artificial intelligence. 
+            Currently studying at [Your University], I enjoy solving complex problems and building tools that make a difference.
+        </p>
+        <p>
+            When I'm not coding, you can find me hiking, reading science fiction, or experimenting with new programming languages and frameworks.
+            I'm always open to collaborating on interesting projects and learning new technologies.
+        </p>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/400x400" alt="Your Name">
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Project Name 1</h3>
+                <p>A brief description of your project. What problems does it solve? What technologies did you use? Highlight the key features and your specific contributions.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Live Demo</a>
                 </div>
-                <div class="about-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra, ex quis mattis pulvinar, nisi nulla rhoncus purus, eget mattis quam turpis vitae magna. Proin laoreet ante a urna hendrerit tincidunt.</p>
-                    <p>Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat.</p>
-                    <p>Currently, I am [your current position/education]. I'm passionate about [your interests] and constantly learning new technologies.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Name 2</h3>
+                <p>Another project description. Try to be concise but informative. Include challenges you faced and how you overcame them if relevant.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project Name 3</h3>
+                <p>One more project to showcase your skills and interests. This could be a personal project, course work, or something you contributed to.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Documentation</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra, ex quis mattis pulvinar, nisi nulla rhoncus purus.</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name 2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra, ex quis mattis pulvinar, nisi nulla rhoncus purus.</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra, ex quis mattis pulvinar, nisi nulla rhoncus purus.</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Data Structures</span>
         </div>
     </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">
-                <!-- Skill 1 -->
-                <div class="skill-item">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                </div>
-
-                <!-- Skill 2 -->
-                <div class="skill-item">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
-
-                <!-- Skill 3 -->
-                <div class="skill-item">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-
-                <!-- Skill 4 -->
-                <div class="skill-item">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-
-                <!-- Skill 5 -->
-                <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <h3>Node.js</h3>
-                </div>
-
-                <!-- Skill 6 -->
-                <div class="skill-item">
-                    <i class="fab fa-git-alt"></i>
-                    <h3>Git</h3>
-                </div>
-            </div>
+    
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Software Developer Intern - Company Name</h3>
+            <p class="date">June 2023 - August 2023</p>
+            <p>
+                Describe your responsibilities, achievements, and the technologies you worked with.
+                Mention specific projects or features you contributed to and their impact.
+            </p>
+        </div>
+        <div class="experience-item">
+            <h3>Research Assistant - University Name</h3>
+            <p class="date">January 2023 - Present</p>
+            <p>
+                Detail your research focus, methodologies used, and any publications or presentations.
+                Highlight skills developed and how this experience relates to your career goals.
+            </p>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p>University Name, Expected Graduation: May 2025</p>
+            <p>Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems, Artificial Intelligence</p>
         </div>
     </section>
-
-    <!-- Footer -->
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
     <footer>
-        <div class="container">
-            <ul class="social-links">
-                <li><a href="#"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>Made with ❤️ using HTML, CSS and JavaScript</p>
     </footer>
-
-    <!-- JavaScript (you can add more scripts as needed) -->
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
