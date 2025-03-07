@@ -3,13 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <title>Simran Chauhan -Robotics Engineer</title>
     <style>
         /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        /* Image styles */
+        .activities {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .activity-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+        
+        .activity-role {
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        .activity-org {
+            font-style: italic;
+            color: #333;
+        }
+        
+        .activity-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .achievements-list {
+            list-style-position: inside;
+            margin-bottom: 25px;
+        }
+        
+        .achievements-list li {
+            margin-bottom: 10px;
+        }
+        
+        .project-highlight {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 6px;
+            border-left: 3px solid #000000;
+        }
+        
+        .project-highlight h3 {
+            color: #000000;
+            margin-bottom: 5px;
+        }
+        
+        .project-location {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        
+        .project-highlight ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+        
+        .project-highlight li {
+            margin-bottom: 5px;
         }
         
         body {
@@ -33,18 +98,18 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 3px solid #0366d6;
+            border: 3px solid #000000;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #0366d6;
+            color: #000000;
         }
         
         .tagline {
             font-size: 1.2rem;
-            color: #586069;
+            color: #333333;
             margin-bottom: 15px;
         }
         
@@ -57,14 +122,14 @@
         }
         
         .social-links a {
-            color: #0366d6;
+            color: #000000;
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s;
         }
         
         .social-links a:hover {
-            color: #044289;
+            color: #444444;
             text-decoration: underline;
         }
         
@@ -78,7 +143,7 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid #eaecef;
-            color: #0366d6;
+            color: #000000;
         }
         
         p {
@@ -106,12 +171,12 @@
         
         .project-card h3 {
             margin-bottom: 10px;
-            color: #0366d6;
+            color: #000000;
         }
         
         .project-card p {
             font-size: 0.9rem;
-            color: #586069;
+            color: #333333;
         }
         
         .project-links {
@@ -122,7 +187,7 @@
             display: inline-block;
             margin-right: 10px;
             text-decoration: none;
-            color: #0366d6;
+            color: #000000;
             font-size: 0.9rem;
         }
         
@@ -134,8 +199,8 @@
         }
         
         .skill-tag {
-            background-color: #f1f8ff;
-            color: #0366d6;
+            background-color: #f1f1f1;
+            color: #000000;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -150,7 +215,7 @@
         
         input, textarea {
             padding: 10px;
-            border: 1px solid #e1e4e8;
+            border: 1px solid #cccccc;
             border-radius: 4px;
             font-family: inherit;
             font-size: 1rem;
@@ -162,7 +227,7 @@
         }
         
         button {
-            background-color: #0366d6;
+            background-color: #000000;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -173,7 +238,7 @@
         }
         
         button:hover {
-            background-color: #044289;
+            background-color: #333333;
         }
         
         /* Footer */
@@ -182,7 +247,7 @@
             margin-top: 60px;
             padding-top: 20px;
             border-top: 1px solid #eaecef;
-            color: #586069;
+            color: #333333;
             font-size: 0.9rem;
         }
         
@@ -200,31 +265,47 @@
                 width: 120px;
                 height: 120px;
             }
+            
+            .activity-item {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .activity-item {
+                grid-template-columns: 3fr 2fr 1fr;
+                align-items: center;
+            }
+            
+            .activity-date {
+                text-align: right;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="/api/placeholder/150/150" alt="Your Photo" class="profile-photo">
-        <h1>Your Name</h1>
-        <p class="tagline">Software Developer | Computer Science Student | Web Enthusiast</p>
+        <img src="/api/placeholder/150/150" alt="Radha Saraf" class="profile-photo">
+        <h1>Radha Saraf</h1>
+        <p class="tagline">Computer Vision Researcher | Camera Calibration Specialist | NeRF Enthusiast</p>
         <div class="social-links">
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
-            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://github.com/radhasaraf" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/radhasaraf" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/radhasaraf" target="_blank">Twitter</a>
+            <a href="mailto:radha.saraf@example.com">Email</a>
         </div>
     </header>
     
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hello! I'm a passionate software developer and computer science student with a focus on web development and artificial intelligence. 
-            Currently studying at [Your University], I enjoy solving complex problems and building tools that make a difference.
+            Hello! I'm a computer vision researcher specializing in camera calibration techniques and Neural Radiance Fields (NeRF). 
+            My work focuses on developing accurate camera models for 3D reconstruction and novel view synthesis applications.
         </p>
         <p>
-            When I'm not coding, you can find me hiking, reading science fiction, or experimenting with new programming languages and frameworks.
-            I'm always open to collaborating on interesting projects and learning new technologies.
+            With a background in computer science and mathematics, I combine theoretical knowledge with practical implementation
+            to advance the state-of-the-art in 3D scene representation and rendering. I'm particularly interested in improving the
+            efficiency and accuracy of NeRF models for real-world applications.
         </p>
     </section>
     
@@ -232,27 +313,75 @@
         <h2>Projects</h2>
         <div class="projects">
             <div class="project-card">
-                <h3>Project Name 1</h3>
-                <p>A brief description of your project. What problems does it solve? What technologies did you use? Highlight the key features and your specific contributions.</p>
+                <h3>Probability of Boundary Edge Detection</h3>
+                <img src="images/boundary-edge.jpg" alt="Boundary Edge Detection" class="project-image">
+                <p>This project implemented a novel method for detecting boundary edges by estimating the probability that a given pixel is an edge. Based on the work Contour Detection and Hierarchical Image Segmentation by Pablo Arbelaez et al. Uses a large filter bank to create texture, brightness, and color maps, combining their gradients with Canny and Sobel baselines.</p>
                 <div class="project-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Live Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Project Name 2</h3>
-                <p>Another project description. Try to be concise but informative. Include challenges you faced and how you overcame them if relevant.</p>
-                <div class="project-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Live Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Project Name 3</h3>
-                <p>One more project to showcase your skills and interests. This could be a personal project, course work, or something you contributed to.</p>
-                <div class="project-links">
-                    <a href="#" target="_blank">GitHub</a>
+                    <a href="https://github.com/radhasaraf/boundary-edge-detection" target="_blank">GitHub</a>
                     <a href="#" target="_blank">Documentation</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Auto Panogram: Classical & DL Panoramic Image Stitching</h3>
+                <img src="images/panoramic-stitching.jpg" alt="Panoramic Image Stitching" class="project-image">
+                <p>Implemented a classical panoramic image stitching pipeline using corner feature matching, Asynchronous Non-Maximum Suppression (ANMS), and RANSAC outlier rejection techniques. Also implemented a deep learning-based pipeline using Deep Image Homography Estimation (DeTone et al.) with both supervised and unsupervised approaches.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/auto-panogram" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Documentation</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>CIFAR-10 Image Classification (ResNet, ResNeXt, DenseNet)</h3>
+                <img src="images/cifar-classification.jpg" alt="CIFAR-10 Classification" class="project-image">
+                <p>Implemented and compared the performance of ResNet, ResNeXt, and DenseNet on the CIFAR-10 dataset. These models were all custom-built using only PyTorch layers, with no built-in implementations, providing deep insights into neural network architecture design.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/cifar10-classification" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Results</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>LQR and PD Controllers for 3D Quadrotor Trajectory Tracking</h3>
+                <img src="images/quadrotor-control.jpg" alt="Quadrotor Trajectory Tracking" class="project-image">
+                <p>Designed an optimal LQR controller for a 6-DOF quadrotor using hover state linearization, reducing the non-linear trajectory tracking error by 82% for quadrotor stabilization. Implemented a PD control system to achieve precise hovering and trajectory tracking for non-linear paths. Validated the PD hover controller's performance through tests at random hovering positions and headings.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/quadrotor-control" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Forward and Inverse Kinematics for OpenManipulatorX Using ROS 2</h3>
+                <img src="images/openmanipulator.jpg" alt="Robot Arm Kinematics" class="project-image">
+                <p>Designed and implemented forward and inverse kinematics algorithms to control the OpenManipulatorX robotic arm using ROS 2. Utilized ROS 2 to develop publisher-subscriber and client-server nodes, enabling real-time motion control and seamless integration of kinematics computations. Achieved precise robotic movements for predefined positions and successfully performed object manipulation tasks.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/openmanipulator-kinematics" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Documentation</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Multi-Camera Calibration Toolkit</h3>
+                <img src="images/camera-calibration.jpg" alt="Camera Calibration" class="project-image">
+                <p>An open-source toolkit for calibrating multi-camera systems with high precision. Includes tools for intrinsic and extrinsic calibration, distortion correction, and validation. Implemented in Python with OpenCV.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/camera-calibration" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Documentation</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Fast-NeRF Implementation</h3>
+                <img src="images/nerf-implementation.jpg" alt="NeRF Implementation" class="project-image">
+                <p>An optimized implementation of Neural Radiance Fields that achieves real-time rendering on consumer hardware. Includes improvements in sampling strategy and network architecture to reduce training and inference time.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/fast-nerf" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Self-Calibrating SLAM System</h3>
+                <img src="images/slam-system.jpg" alt="SLAM System" class="project-image">
+                <p>A Simultaneous Localization and Mapping (SLAM) system that incorporates online camera self-calibration. Allows for robust operation even when camera parameters change during operation.</p>
+                <div class="project-links">
+                    <a href="https://github.com/radhasaraf/self-calibrating-slam" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Research Paper</a>
                 </div>
             </div>
         </div>
@@ -261,53 +390,150 @@
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-list">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Camera Calibration</span>
+            <span class="skill-tag">Neural Radiance Fields</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Image Stitching</span>
+            <span class="skill-tag">Panoramic Images</span>
+            <span class="skill-tag">CNN Architectures</span>
+            <span class="skill-tag">ResNet/ResNeXt</span>
+            <span class="skill-tag">DenseNet</span>
+            <span class="skill-tag">Robotics</span>
+            <span class="skill-tag">Control Systems</span>
+            <span class="skill-tag">LQR Controllers</span>
+            <span class="skill-tag">PD Controllers</span>
+            <span class="skill-tag">ROS 2</span>
+            <span class="skill-tag">Kinematics</span>
+            <span class="skill-tag">Motion Planning</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">OpenCV</span>
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">UI/UX Design</span>
-            <span class="skill-tag">Responsive Design</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">CUDA</span>
+            <span class="skill-tag">3D Reconstruction</span>
+            <span class="skill-tag">SLAM</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">RANSAC</span>
+            <span class="skill-tag">Feature Matching</span>
         </div>
     </section>
     
     <section id="experience">
         <h2>Experience</h2>
         <div class="experience-item">
-            <h3>Software Developer Intern - Company Name</h3>
-            <p class="date">June 2023 - August 2023</p>
+            <h3>Computer Vision Researcher - Vision Labs</h3>
+            <p class="date">June 2023 - Present</p>
             <p>
-                Describe your responsibilities, achievements, and the technologies you worked with.
-                Mention specific projects or features you contributed to and their impact.
+                Leading research on improving camera calibration methods for multi-view stereo systems.
+                Developed novel algorithms for automatic lens distortion correction that improved 3D reconstruction accuracy by 27%.
+                Implemented and optimized NeRF variants for industrial inspection applications.
             </p>
         </div>
         <div class="experience-item">
-            <h3>Research Assistant - University Name</h3>
-            <p class="date">January 2023 - Present</p>
+            <h3>Research Assistant - Computer Vision Group, University of Technology</h3>
+            <p class="date">January 2022 - May 2023</p>
             <p>
-                Detail your research focus, methodologies used, and any publications or presentations.
-                Highlight skills developed and how this experience relates to your career goals.
+                Conducted research on efficient Neural Radiance Fields training strategies.
+                Implemented a hybrid representation that combines explicit and implicit scene modeling.
+                Published two papers on camera self-calibration techniques for dynamic scenes.
             </p>
+        </div>
+    </section>
+    
+    <section id="research">
+        <h2>Research Focus</h2>
+        <div class="research-areas">
+            <h3>Camera Calibration</h3>
+            <p>
+                My research in camera calibration focuses on developing robust methods for estimating camera parameters 
+                in challenging environments. This includes work on:
+            </p>
+            <ul>
+                <li>Self-calibration from scene constraints</li>
+                <li>Multi-camera system calibration</li>
+                <li>Online calibration refinement</li>
+                <li>Handling non-standard camera models</li>
+            </ul>
+            
+            <h3>Neural Radiance Fields</h3>
+            <p>
+                My work with NeRF technologies explores ways to make these powerful representations more practical 
+                for real-world applications:
+            </p>
+            <ul>
+                <li>Reducing training time through efficient sampling</li>
+                <li>Incorporating camera parameter uncertainty into NeRF models</li>
+                <li>Extending NeRF to handle dynamic scenes</li>
+                <li>Developing compact representations for resource-constrained devices</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="extracurricular">
+        <h2>Extra Curricular</h2>
+        <div class="activities">
+            <div class="activity-item">
+                <div class="activity-role">Graduate Student Ambassador</div>
+                <div class="activity-org">WPI, Worcester, United States</div>
+                <div class="activity-date">Feb 2025 - Present</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-role">Member, CSR (Corporate Social Responsibility Initiative)</div>
+                <div class="activity-org">Synergy D/A A/S, India</div>
+                <div class="activity-date">Jul 2023 - Aug 2024</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-role">Member, IVLabs (Robotics Club of VNIT)</div>
+                <div class="activity-org">VNIT Nagpur, India</div>
+                <div class="activity-date">Jun 2018 - Present</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-role">Vice Chairman, IEEE VNIT Student Branch</div>
+                <div class="activity-org">VNIT Nagpur, India</div>
+                <div class="activity-date">Jul 2019 - Jul 2020</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-role">Workshop Head, IVLabs (Robotics Club of VNIT)</div>
+                <div class="activity-org">VNIT Nagpur, India</div>
+                <div class="activity-date">Jun 2018 - Jul 2019</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="publication-item">
+            <h3>IoT-Based Ambiance Monitoring System</h3>
+            <p class="publication-venue">International Conference on Advances in Mechanical Engineering (ICAME), 2020</p>
+            <p class="publication-authors">Hrithik Singh Parihar, Rajesh Nayale, Mayank Bamb, Dheeraj Guhe, Sharan Bajpuri, Rishesh Agarwal, and Simran Chauhan.</p>
+        </div>
+        <div class="publication-item">
+            <h3>Hand Gesture Control of Computer Features</h3>
+            <p class="publication-venue">International Conference on Advances in Mechanical Engineering (ICAME), 2020</p>
+            <p class="publication-authors">Rishabh Runwal, Shiruaj Dhonde, Jatin Pardhi, Suraj Kumar, Aadesh Varude, Mayuresh Sarode, Mayuresh Bhoyar, Simran Chauhan, and Neha Marne.</p>
         </div>
     </section>
     
     <section id="education">
         <h2>Education</h2>
         <div class="education-item">
-            <h3>Bachelor of Science in Computer Science</h3>
-            <p>University Name, Expected Graduation: May 2025</p>
-            <p>Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems, Artificial Intelligence</p>
+            <h3>M.S in Robotics Engineering</h3>
+            <p>Worcester Polytechnic Institute, 2026</p>
+        </div>
+        <div class="education-item">
+            <h3>B.Tech in Electrical & Electronics Engineering</h3>
+            <p>Visvesvaraya National Institute of Technology, Nagpur</p>
+            <p>Thesis: "Geometric Constraints for Camera Self-Calibration in Multi-View Settings"</p>
         </div>
     </section>
-    
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+        <p>I'm always interested in research collaborations, consulting opportunities, or discussing. Feel free to reach out!</p>
         <form>
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
@@ -316,10 +542,3 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
-    
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-        <p>Made with ❤️ using HTML, CSS and JavaScript</p>
-    </footer>
-</body>
-</html>
