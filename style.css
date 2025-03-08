@@ -79,6 +79,14 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
 /* Contact */
 .social-links {
     display: flex;
