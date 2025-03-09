@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Coming Soon - Simran Chauhan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .date {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .contact {
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Website Coming Soon</h1>
+        <p>I'm working on something awesome! My personal website is currently under construction and will be launching soon.</p>
+        <p>Expected launch: <span class="date">April 2025</span></p>
+        <p class="contact">For inquiries, please contact me at: your-email@example.com</p>
+    </div>
+</body>
+</html>
