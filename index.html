@@ -1,543 +1,473 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simran Chauhan -Robotics Engineer</title>
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        /* Image styles */
-        .activities {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .activity-item {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 5px;
-        }
-        
-        .activity-role {
-            font-weight: bold;
-            color: #000000;
-        }
-        
-        .activity-org {
-            font-style: italic;
-            color: #333;
-        }
-        
-        .activity-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .achievements-list {
-            list-style-position: inside;
-            margin-bottom: 25px;
-        }
-        
-        .achievements-list li {
-            margin-bottom: 10px;
-        }
-        
-        .project-highlight {
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #f8f8f8;
-            border-radius: 6px;
-            border-left: 3px solid #000000;
-        }
-        
-        .project-highlight h3 {
-            color: #000000;
-            margin-bottom: 5px;
-        }
-        
-        .project-location {
-            font-style: italic;
-            margin-bottom: 10px;
-            color: #444;
-        }
-        
-        .project-highlight ul {
-            list-style-position: inside;
-            margin-left: 10px;
-        }
-        
-        .project-highlight li {
-            margin-bottom: 5px;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header styles */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid #000000;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #000000;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            color: #333333;
-            margin-bottom: 15px;
-        }
-        
-        /* Social links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .social-links a {
-            color: #000000;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: #444444;
-            text-decoration: underline;
-        }
-        
-        /* Section styles */
-        section {
-            margin-bottom: 40px;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eaecef;
-            color: #000000;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        /* Project cards */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .project-card {
-            border: 1px solid #e1e4e8;
-            border-radius: 6px;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-card h3 {
-            margin-bottom: 10px;
-            color: #000000;
-        }
-        
-        .project-card p {
-            font-size: 0.9rem;
-            color: #333333;
-        }
-        
-        .project-links {
-            margin-top: 15px;
-        }
-        
-        .project-links a {
-            display: inline-block;
-            margin-right: 10px;
-            text-decoration: none;
-            color: #000000;
-            font-size: 0.9rem;
-        }
-        
-        /* Skills */
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-tag {
-            background-color: #f1f1f1;
-            color: #000000;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* Contact form */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        input, textarea {
-            padding: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-        
-        button:hover {
-            background-color: #333333;
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #eaecef;
-            color: #333333;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 600px) {
-            .projects {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .activity-item {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .activity-item {
-                grid-template-columns: 3fr 2fr 1fr;
-                align-items: center;
-            }
-            
-            .activity-date {
-                text-align: right;
-            }
-        }
-    </style>
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Simran Chauhan</title>
+  
+  <meta name="author" content="Radha Saraf">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="media/radha.jpg">
 </head>
+
 <body>
-    <header>
-        <img src="/api/placeholder/150/150" alt="Simran Chauhan" class="profile-photo">
-        <h1>Simran Chauhan</h1>
-        <p class="tagline">Robotics Engineer</p>
-        <div class="social-links">
-            <a href="https://github.com/simc4-u" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/simran-chauhan-93184714b/" target="_blank">LinkedIn</a>
-            <a href="schauhan@wpi.edu">Email</a>
-        </div>
-    </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hello! I'm a computer vision researcher specializing in camera calibration techniques and Neural Radiance Fields (NeRF). 
-            My work focuses on developing accurate camera models for 3D reconstruction and novel view synthesis applications.
-        </p>
-        <p>
-            With a background in computer science and mathematics, I combine theoretical knowledge with practical implementation
-            to advance the state-of-the-art in 3D scene representation and rendering. I'm particularly interested in improving the
-            efficiency and accuracy of NeRF models for real-world applications.
-        </p>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h3>Probability of Boundary Edge Detection</h3>
-                <img src="images/boundary-edge.jpg" alt="Boundary Edge Detection" class="project-image">
-                <p>This project implemented a novel method for detecting boundary edges by estimating the probability that a given pixel is an edge. Based on the work Contour Detection and Hierarchical Image Segmentation by Pablo Arbelaez et al. Uses a large filter bank to create texture, brightness, and color maps, combining their gradients with Canny and Sobel baselines.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/boundary-edge-detection" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Documentation</a>
-                </div>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Simran Chauhan</name>
+              </p>
+              <p>I earned a master's in <a href="https://www.wpi.edu/academics/departments/robotics-engineering">
+                Robotics</a> at Worcester Polytechnic Institute (WPI) in December 2023. While at it, I worked at
+                <strong>Skydio</strong> and <strong>Humane</strong> as a computer vision intern.
+              </p>
+              <p>Previously, I was a part of <a href="https://www.skylarkdrones.com/about">Skylark Drones</a>,
+                solving computer vision problems associated with drone surveys. I was also the
+                primary backend developer for <a href="https://www.dronemissionops.com/">Drone Mission Ops</a>, the
+                proprietary software for managing commercial drone operations.
+              </p>
+              <p>
+                I obtained my bachelors in Electrical Engineering from <a href="https://www.vnit.ac.in/">VNIT</a>(India)
+                in 2018, where I actively engaged in projects as part of the robotics club, <a href="https://www.ivlabs.in/">Ivlabs</a>.
+              </p>
+              <p>
+<!--                Resilience, adaptability and continuous learning are among my core values.-->
+                I am interested in visual perception, deep learning & system software and am currently open to new opportunities.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:schauhan@wpi.edu">Email</a> &nbsp/&nbsp
+                <a href="media/resume_radha-saraf.pdf">Resume</a> &nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/simran-chauhan-93184714b/">LinkedIn</a> &nbsp/&nbsp
+                <a href="https://github.com/simc4-u/">Github</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="media/radha.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="media/radha.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Work Experience</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          <!-- Humane -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <a href="https://hu.ma.ne/"><img src='media/humane.jpg' width="160"></a>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <strong>Computer Vision Engineering Intern</strong>
+              <br>
+              <p>Integrated hand gesture recognition feature using MediaPipe model into an android application.</p>
+              <p>Interfaced this feature with the Speech service of the application to speak when the gesture is recognized.</p>
+              <p>Animated a rigged 3D hand model using joint transformations to optimize the rendering of laser effects onto the palm region, resulting in improved visual realism & interactivity.</p>
+              <p>Building a deep learning pipeline for temporal gesture recognition.</p>
+            </td>
+          </tr>
+
+          <!-- Skydio -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <a href="https://www.skydio.com/"><img src='media/skydio.jpg' width="160"></a>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <strong>Autonomy Engineer Intern: Computer Vision</strong>
+              <br>
+              <p> Worked on enhancing localization accuracy of Skydio’s Visual Positioning System (VPS), enabling more precise
+              drone positioning.</p>
+              <p>Used a sequence of images with relative pose constraints to refine the optimization problem for reducing VIO drift.</p>
+              <p>Utilized SymForce, a symbolic computation library for code generation and nonlinear optimization.</p>
+              <p>Analyzed the performance on flight logs with sensible, intuitive metrics in the absence of ground truth data.</p>
+            </td>
+          </tr>
+
+          <!-- Skylark Drones -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <a href="https://www.skylarkdrones.com/"><img src='media/skylark_logo.png' width="160"></a>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <strong>Perception for drone surveys:</strong>
+              <br>
+              <p>Developed an object detection algorithm for Ground Control Points (GCPs) in aerial drone images,
+                combining traditional computer vision tools with a CNN inspired by the LeNet model which resulted in
+                94.6% accuracy(F-score)</p>
+              <p>Achieved 86% accuracy in estimating crop count for a farm using machine learning techniques(SVM, CNNs)</p>
+              <strong>Drone mission planning & operations:</strong>
+              <br>
+              <p>Primary back-end developer & maintainer for the proprietary drone operations management application,
+                <a href="https://www.dronemissionops.com/">Drone Mission Ops</a>.
+              </p>
+              <p>Created multiple RESTful API endpoints with the best software development practises & secured them with
+                unit tests.</p>
+              <p>Optimized several API routes to achieve 40-80% reduction in latency using MongoDB.
+              </p>
+              <p>Integrated Celery for background processing of time-consuming tasks like drone mission creation,
+                elevation profile generation for areas of interest, etc.
+              </p>
+              <p>Added support for registration & authentication workflows, conditional requests, push notifications,
+                and pagination among others.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Research & Projects</heading>
+              <!-- <p>
+                Projects with publications are <span class="highlight">highlighted</span>.
+              </p> -->
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          <!-- GCP Detection in UAV images-->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <!-- <div class="two" id='nerfbake_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="media/nerfbake_15.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div> -->
+                <img src='media/gcp.jpeg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Standardization of the Shape of Ground Control Point (GCP) and the Methodology for Its Detection in Images for UAV-Based Mapping Applications</papertitle>
+              <br>
+              <a href="https://www.linkedin.com/in/aman-jain-16aj/">Aman Jain</a>,
+              <a href="https://www.linkedin.com/in/milind-mahajan/">Milind Mahajan</a>,
+              <strong>Radha Saraf</strong>
+              <br>
+              <em>CVC(SAI)</em>, 2019
+              <br>
+              <a href="https://link.springer.com/chapter/10.1007/978-3-030-17795-9_34">Springer</a>
+              <p>To establish an accurate earth to orthomap correspondence for aerial images from UAVs, we proposed the
+                design of a simple marker along with the pipeline for its detection</p>
+            </td>
+
+          <!-- 3D Reconstruction of a scene using SfM and NeRF -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/lego.gif' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>3D Reconstruction of a scene using SfM and NeRF</papertitle>
+              <br>
+              <a href="https://github.com/radhasaraf/rbe549-sfm-nerf">project page</a>
+              <p>Reconstructed a 3D scene from a set of images with different viewpoints using CV & DL methods, sfM and NeRF resp.</p>
+            </td>
+
+          <!-- Zhang's Camera Calibration -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/checkerboard.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Zhang's camera calibration</papertitle>
+              <br>
+              <a href="https://github.com/radhasaraf/rbe549-auto-calib">project page</a>
+              <p>Implemented camera calibration method as presented by Zhengyou Zhang in his 1998 paper from Microsoft</p>
+              <p>Used eigen decomposition for solving homogenous system of linear equations & MLE for optimization of calibration parameters</p>
+              <p>The mean re-projection error post optimization was close to 0.5 pixels</p>
+            </td>
+
+          <!-- Face swapping -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/result_del_tri2.gif' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Swap faces in a video using CV and deep learning approaches</papertitle>
+              <br>
+              <a href="https://github.com/saikrn112/face-swap-rbe549">project page</a>
+              <p>Used Delaunay triangulation and Thin plate splines based warping to swap two faces in a video.</p>
+              <p>Blended the faces using Poisson blending</p>
+            </td>
+
+          <!-- Panorama stitching -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/panorama.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Panorama stitching for two or more images</papertitle>
+              <br>
+              <a href="https://github.com/radhasaraf/rbe549-my-auto-pano">project page</a>
+              <p>Estimated homography between image pairs using feature correspondences.</p>
+              <p>Used Adaptive non-maximal suppression for uniform features and RANSAC for removing the outliers among the feature matches.</p>
+              <p>Also, trained HomographyNet, a CNN based supervised learning architecture for homography estimation using synthetically generated data.
+              </p>
+            </td>
+
+
+          <!-- Pose estimation of a mobile robot-->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/pose_estm.gif' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Pose estimation of a mobile robot</papertitle>
+              <br>
+              <a href="https://drive.google.com/file/d/1lqBneVtAyftOY26LdE43fNdpQ4PZhpsA/view">project video</a>
+              <!-- <a href="https://phogzone.com/">Peter Hedman</a>,
+              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
+              <a href="https://bmild.github.io/">Ben Mildenhall</a>,
+              <strong>Jonathan T. Barron</strong>,
+              <a href="https://www.pauldebevec.com/">Paul Debevec</a>
+              <br>
+              <em>arXiv</em>, 2021
+              <br> -->
+              <!-- <a href="http://nerf.live">project page</a> -->
+              <!-- / -->
+              <!-- <a href="https://arxiv.org/abs/2103.14645">arXiv</a> -->
+              <!-- / -->
+              <!-- <a href="https://kenembanisi.github.io/">arXiv</a>
+              / -->
+              <!-- <a href="https://kenembanisi.github.io/">project page</a> -->
+              <p>Carried out calibration for camera intrinsics of an autonomous mobile robot.</p>
+              <p>Estimated pose of the robot using differential-RGB color-space, image processing tools,
+                and the perspective-n-point algorithm from the OpenCV library.
+              <p>Accuracy was within +/-5 cm.</p>
+            </td>
+
+           <!-- Probability based edge detection-->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/pblite.jpg' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Probability based edge detection</papertitle>
+              <br>
+              <a href="https://github.com/radhasaraf/rbe549-alohomora">project page</a>
+              <p>Developed a simplified version of pb, which finds boundaries by examining texture and color discontinuities in addition to intensity discontinuities across multiple scales.</p>
+              <p>Outperforms Canny and Sobel by suppressing the false positives produced by classical methods in textured regions.</p>
+            </td>
+
+
+          <!-- Kinematic planning under non-holonomic constraints-->
+<!--          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">-->
+<!--            <td style="padding:20px;width:25%;vertical-align:top">-->
+<!--              <div class="one">-->
+<!--                <img src='media/valet.gif' width="160">-->
+<!--              </div>-->
+<!--            </td>-->
+<!--            <td style="padding:20px;width:75%;vertical-align:top">-->
+<!--              <papertitle>Kinematic planning under non-holonomic constraints</papertitle>-->
+<!--              <br>-->
+<!--              <a href="https://github.com/radhasaraf/rbe550-valet">project page</a>-->
+<!--              <p>Developed a kinematic path planner with non-holonomic constraints to efficiently park vehicles ranging-->
+<!--                from a differential drive bot to a car to a truck with a trailer.</p>-->
+<!--            </td>-->
+
+          
+          <!-- Graph search algorithms -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/a-star.gif' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Graph search algorithms: BFS, DFS, Dijkstra's, A*</papertitle>
+              <br>
+              <a href="https://github.com/radhasaraf/RBE550-Motion-planning">project page</a>
+              <p>Implemented planning algorithms- BFS, DFS, Dijkstra’s, & A* on a grid world setup of configurable obstacle density.</p>
+            </td>
+
+<!--          &lt;!&ndash; Autonomous mobile robot for library maintenance    &ndash;&gt;-->
+<!--          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">-->
+<!--            <td style="padding:20px;width:25%;vertical-align:top">-->
+<!--              <div class="one">-->
+<!--                <img src='media/a-star.gif' width="160">-->
+<!--              </div>-->
+<!--            </td>-->
+<!--            <td style="padding:20px;width:75%;vertical-align:top">-->
+<!--              <papertitle>Autonomous mobile robot for library maintenance</papertitle>-->
+<!--              <br>-->
+<!--              <a href="https://github.com/radhasaraf/RBE550-Motion-planning">project page</a>-->
+<!--              <p>Implemented planning algorithms- BFS, DFS, Dijkstra’s, & A* on a grid world setup of configurable obstacle density.</p>-->
+<!--            </td>-->
+
+
+          <!-- Deep q-learning to play breakout -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/breakout.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Deep q-learning to play breakout</papertitle>
+              <br>
+              <a href="https://github.com/radhasaraf/ds595-rl">project page</a>
+              <p>Implemented a Deep QLearning Network(DQN) to play Breakout for an averaging reward over 40 points in 100 episodes.</p>
+            </td>
+
+          <!-- Comparison of reinforcement learning techniques on Super Mario Bros.-->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <img src='media/mario.gif' width="100">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>Comparison of reinforcement learning techniques on Super Mario Bros.</papertitle>
+              <br>
+              <a href="https://drive.google.com/file/d/1n4Xd6TdkVtwkcyrDQy8IzQEPCJbRaIrT/view">poster</a>
+              <p>Implemented Dueling DQN(DDQN), Asynchronous Advantage Actor Critic(A3C), Proximal Policy Optimization(PPO) on Super Mario Bros. environment</p>
+            </td>
+
+          <!-- PID Control of robot manipulator in ROS -->
+          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+            <td style="padding:20px;width:25%;vertical-align:top">
+              <div class="one">
+                <!-- <div class="two" id='nerfbake_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="media/nerfbake_15.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div> -->
+                <img src='media/joint_space_pid_control.gif' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:top">
+              <papertitle>PID Control of robot manipulator in ROS</papertitle>
+              <br>
+              <p></p>
+              <p>Used ROS’ client-service, publisher-subscriber frameworks for PID control of robot manipulator end-effector pose.</p>
+            </td>
+
+
+          <!-- <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="media/ArbalaezCVPR2014.jpg" alt="ArbalaezCVPR2014" width="160" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <a href="https://drive.google.com/file/d/1M0wijHY134F9ETBgO8mjeuKUSblTRLG0/view?usp=sharing">
+                <papertitle>Multiscale Combinatorial Grouping</papertitle>
+              </a>
+              <br>
+              <a href="http://www.cs.berkeley.edu/~arbelaez/">Pablo Arbel&aacuteez</a>, <a href="http://imatge.upc.edu/web/people/jordi-pont-tuset">Jordi Pont-Tuset</a>, <strong>Jonathan T. Barron</strong>, <a href="http://imatge.upc.edu/web/ferran">Ferran Marqu&eacutes</a>, <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a>
+              <br>
+              <em>CVPR</em>, 2014
+              <br>
+              <a href="http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/mcg/">project page</a> /
+              <a href="data/ArbelaezCVPR2014.bib">bibtex</a>
+              <p>This paper is subsumed by <a href="#MCG_journal">our journal paper</a>.</p>
+            </td>
+          </tr> -->
+
+        </tbody></table>
+
+        <!-- Teaching and Outreach Experience -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Teaching & Outreach Experiences</heading>
+          </td>
+        </tr>
+      </tbody></table>
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+        <!-- ECE TA -->
+        <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='media/wpi_logo.png' width="160">
             </div>
-            <div class="project-card">
-                <h3>Auto Panogram: Classical & DL Panoramic Image Stitching</h3>
-                <img src="images/panoramic-stitching.jpg" alt="Panoramic Image Stitching" class="project-image">
-                <p>Implemented a classical panoramic image stitching pipeline using corner feature matching, Asynchronous Non-Maximum Suppression (ANMS), and RANSAC outlier rejection techniques. Also implemented a deep learning-based pipeline using Deep Image Homography Estimation (DeTone et al.) with both supervised and unsupervised approaches.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/auto-panogram" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Documentation</a>
-                </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <!-- ECE Tutor -->
+            <papertitle> Graduate Teaching Assistant at WPI</papertitle>
+            <p>Matrices and Linear Algebra (MA 2071)</p>
+            <p>Sensors, Circuits and Systems (ECE 2019)</p>
+<!--            &lt;!&ndash; Girls Talk Math (GTM) &ndash;&gt;-->
+<!--            <a href="https://girlstalkmath.co"><papertitle>Girls Talk Math (GTM)</papertitle>-->
+<!--            </a>-->
+<!--            <p>Supervised and mentored high school girls throughout a 2-week, math, day-camp that explored mathematical-->
+<!--              concepts in RSA Cryptography.-->
+<!--            </p>-->
+<!--            &lt;!&ndash; Linear Algebra &ndash;&gt;-->
+<!--            <papertitle> Linear Algebra for computer vision</papertitle>-->
+<!--            </a>-->
+<!--            <p>As an undergrad senior, I taught linear algebra to sophomores as part of the mentorship program at the-->
+<!--              robotics lab.</p>-->
+<!--            </p>-->
+
+          </td>
+
+        <!-- Girls Talk Math (GTM) -->
+        <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='media/gtm_logo.jfif' width="160">
             </div>
-            <div class="project-card">
-                <h3>CIFAR-10 Image Classification (ResNet, ResNeXt, DenseNet)</h3>
-                <img src="images/cifar-classification.jpg" alt="CIFAR-10 Classification" class="project-image">
-                <p>Implemented and compared the performance of ResNet, ResNeXt, and DenseNet on the CIFAR-10 dataset. These models were all custom-built using only PyTorch layers, with no built-in implementations, providing deep insights into neural network architecture design.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/cifar10-classification" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Results</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>LQR and PD Controllers for 3D Quadrotor Trajectory Tracking</h3>
-                <img src="images/quadrotor.jpg" alt="Quadrotor Trajectory Tracking" class="project-image">
-                <p>Designed an optimal LQR controller for a 6-DOF quadrotor using hover state linearization, reducing the non-linear trajectory tracking error by 82% for quadrotor stabilization. Implemented a PD control system to achieve precise hovering and trajectory tracking for non-linear paths. Validated the PD hover controller's performance through tests at random hovering positions and headings.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/quadrotor-control" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Forward and Inverse Kinematics for OpenManipulatorX Using ROS 2</h3>
-                <img src="images/openmanipulator.gif" alt="Robot Arm Kinematics" class="project-image">
-                <p>Designed and implemented forward and inverse kinematics algorithms to control the OpenManipulatorX robotic arm using ROS 2. Utilized ROS 2 to develop publisher-subscriber and client-server nodes, enabling real-time motion control and seamless integration of kinematics computations. Achieved precise robotic movements for predefined positions and successfully performed object manipulation tasks.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/openmanipulator-kinematics" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Documentation</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Multi-Camera Calibration Toolkit</h3>
-                <img src="images/camera-calibration.jpg" alt="Camera Calibration" class="project-image">
-                <p>An open-source toolkit for calibrating multi-camera systems with high precision. Includes tools for intrinsic and extrinsic calibration, distortion correction, and validation. Implemented in Python with OpenCV.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/camera-calibration" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Documentation</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Fast-NeRF Implementation</h3>
-                <img src="images/sfm.jpg" alt="NeRF Implementation" class="project-image">
-                <p>Developed a Classical Structure from Motion (SfM) pipeline to reconstruct 3D structures from sequences of 2D images. This project integrates key techniques such as feature detection, matching, motion recovery, and 3D reconstruction.
-Utilized essential matrix computation, bundle adjustment, and triangulation methods to accurately estimate 3D points and camera positions, demonstrating the core principles of SfM in computer vision.     <div class="project-links">
-                    <a href="https://github.com/radhasaraf/fast-nerf" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Self-Calibrating SLAM System</h3>
-                <img src="images/slam-system.jpg" alt="SLAM System" class="project-image">
-                <p>A Simultaneous Localization and Mapping (SLAM) system that incorporates online camera self-calibration. Allows for robust operation even when camera parameters change during operation.</p>
-                <div class="project-links">
-                    <a href="https://github.com/radhasaraf/self-calibrating-slam" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Research Paper</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <span class="skill-tag">Camera Calibration</span>
-            <span class="skill-tag">Neural Radiance Fields</span>
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">Image Stitching</span>
-            <span class="skill-tag">Panoramic Images</span>
-            <span class="skill-tag">CNN Architectures</span>
-            <span class="skill-tag">ResNet/ResNeXt</span>
-            <span class="skill-tag">DenseNet</span>
-            <span class="skill-tag">Robotics</span>
-            <span class="skill-tag">Control Systems</span>
-            <span class="skill-tag">LQR Controllers</span>
-            <span class="skill-tag">PD Controllers</span>
-            <span class="skill-tag">ROS 2</span>
-            <span class="skill-tag">Kinematics</span>
-            <span class="skill-tag">Motion Planning</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">OpenCV</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">CUDA</span>
-            <span class="skill-tag">3D Reconstruction</span>
-            <span class="skill-tag">SLAM</span>
-            <span class="skill-tag">Deep Learning</span>
-            <span class="skill-tag">RANSAC</span>
-            <span class="skill-tag">Feature Matching</span>
-        </div>
-    </section>
-    
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <h3>Computer Vision Researcher - Vision Labs</h3>
-            <p class="date">June 2023 - Present</p>
-            <p>
-                Leading research on improving camera calibration methods for multi-view stereo systems.
-                Developed novel algorithms for automatic lens distortion correction that improved 3D reconstruction accuracy by 27%.
-                Implemented and optimized NeRF variants for industrial inspection applications.
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://girlstalkmath.co"><papertitle>Girls Talk Math (GTM)</papertitle>
+            </a>
+            <p>Supervised and mentored high school girls throughout a 2-week, math, day-camp that explored mathematical concepts in RSA Cryptography.
             </p>
-        </div>
-        <div class="experience-item">
-            <h3>Research Assistant - Computer Vision Group, University of Technology</h3>
-            <p class="date">January 2022 - May 2023</p>
-            <p>
-                Conducted research on efficient Neural Radiance Fields training strategies.
-                Implemented a hybrid representation that combines explicit and implicit scene modeling.
-                Published two papers on camera self-calibration techniques for dynamic scenes.
+          </td>
+
+        <!-- Linear Algebra -->
+        <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='media/vnit_logo.png' width="160">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <papertitle> Linear Algebra for computer vision </papertitle>
+            </a>
+            <p>As an undergrad senior, I taught linear algebra to sophomores as part of the mentorship program at
+              <a href="https://www.ivlabs.in/">Ivlabs</a>.</p>
             </p>
-        </div>
-    </section>
-    
-    <section id="research">
-        <h2>Research Focus</h2>
-        <div class="research-areas">
-            <h3>Camera Calibration</h3>
-            <p>
-                My research in camera calibration focuses on developing robust methods for estimating camera parameters 
-                in challenging environments. This includes work on:
-            </p>
-            <ul>
-                <li>Self-calibration from scene constraints</li>
-                <li>Multi-camera system calibration</li>
-                <li>Online calibration refinement</li>
-                <li>Handling non-standard camera models</li>
-            </ul>
-            
-            <h3>Neural Radiance Fields</h3>
-            <p>
-                My work with NeRF technologies explores ways to make these powerful representations more practical 
-                for real-world applications:
-            </p>
-            <ul>
-                <li>Reducing training time through efficient sampling</li>
-                <li>Incorporating camera parameter uncertainty into NeRF models</li>
-                <li>Extending NeRF to handle dynamic scenes</li>
-                <li>Developing compact representations for resource-constrained devices</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="extracurricular">
-        <h2>Extra Curricular</h2>
-        <div class="activities">
-            <div class="activity-item">
-                <div class="activity-role">Graduate Student Ambassador</div>
-                <div class="activity-org">WPI, Worcester, United States</div>
-                <div class="activity-date">Feb 2025 - Present</div>
-            </div>
-            
-            <div class="activity-item">
-                <div class="activity-role">Member, CSR (Corporate Social Responsibility Initiative)</div>
-                <div class="activity-org">Synergy D/A A/S, India</div>
-                <div class="activity-date">Jul 2023 - Aug 2024</div>
-            </div>
-            
-            <div class="activity-item">
-                <div class="activity-role">Member, IVLabs (Robotics Club of VNIT)</div>
-                <div class="activity-org">VNIT Nagpur, India</div>
-                <div class="activity-date">Jun 2018 - Present</div>
-            </div>
-            
-            <div class="activity-item">
-                <div class="activity-role">Vice Chairman, IEEE VNIT Student Branch</div>
-                <div class="activity-org">VNIT Nagpur, India</div>
-                <div class="activity-date">Jul 2019 - Jul 2020</div>
-            </div>
-            
-            <div class="activity-item">
-                <div class="activity-role">Workshop Head, IVLabs (Robotics Club of VNIT)</div>
-                <div class="activity-org">VNIT Nagpur, India</div>
-                <div class="activity-date">Jun 2018 - Jul 2019</div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="publications">
-        <h2>Publications</h2>
-        <div class="publication-item">
-            <h3>IoT-Based Ambiance Monitoring System</h3>
-            <p class="publication-venue">International Conference on Advances in Mechanical Engineering (ICAME), 2020</p>
-            <p class="publication-authors">Hrithik Singh Parihar, Rajesh Nayale, Mayank Bamb, Dheeraj Guhe, Sharan Bajpuri, Rishesh Agarwal, and Simran Chauhan.</p>
-        </div>
-        <div class="publication-item">
-            <h3>Hand Gesture Control of Computer Features</h3>
-            <p class="publication-venue">International Conference on Advances in Mechanical Engineering (ICAME), 2020</p>
-            <p class="publication-authors">Rishabh Runwal, Shiruaj Dhonde, Jatin Pardhi, Suraj Kumar, Aadesh Varude, Mayuresh Sarode, Mayuresh Bhoyar, Simran Chauhan, and Neha Marne.</p>
-        </div>
-    </section>
-    
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-            <h3>M.S in Robotics Engineering</h3>
-            <p>Worcester Polytechnic Institute, 2026</p>
-        </div>
-        <div class="education-item">
-            <h3>B.Tech in Electrical & Electronics Engineering</h3>
-            <p>Visvesvaraya National Institute of Technology, Nagpur</p>
-            <p>Thesis: "Geometric Constraints for Camera Self-Calibration in Multi-View Settings"</p>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>I'm always interested in research collaborations, consulting opportunities, or discussing. Feel free to reach out!</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="text" placeholder="Subject">
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+          </td>
+
+      
+        <!-- Footnote -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                Source code and style cloned from  <a href="https://jonbarron.info/">Jon Barron's website</a>
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
