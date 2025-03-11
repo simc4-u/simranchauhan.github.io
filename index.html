@@ -59,47 +59,44 @@
           <tr onmouseout="sfm_stop()" onmouseover="sfm_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/lego.gif' width="160">
+                <img src='images/sfm.jpg' width="160">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle>3D Reconstruction via Structure from Motion</papertitle>
+              <papertitle>Classical Structure from Motion(SfM)</papertitle>
               <br>
-              <a href="https://github.com/simc4-u/rbe549-sfm-nerf">project page</a>
-              <p>Engineered a SfM pipeline integrating triangulation with RANSAC, minimizing reprojection errors by 89% and achieving 0.87-pixel reconstruction accuracy across views.</p>
-              <p>Developed multi-view camera system with PnP algorithms and sparse bundle adjustment, improving pose estimation by 57% while optimizing 1,200+ 3D points simultaneously.</p>
-            </td>
+              <a href="https://github.com/simc4-u/SFM">project page</a>
+              <p>Reconstructed a 3D scene from a collection of 2D images by implementing a Structure from Motion pipeline with advanced geometric optimization techniques. The approach combined triangulation methods with robust feature matching, PnP algorithms for precise camera pose estimation, and sparse bundle adjustment to refine both camera parameters and 3D points simultaneously. This pipeline enables developing complete 3D models from 2D images, creating accurate digital representations of real-world scenes with sub-pixel precision.</p>
+             /td>
           </tr>
 
-          <!-- Robust Camera Calibration using Zhang's Method -->
+          <!-- Camera Calibration using Zhang's Method -->
           <tr onmouseout="calib_stop()" onmouseover="calib_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/checkerboard.jpg' width="160">
+                <img src='images/camera-calibration.jpg' width="160">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle>Robust Camera Calibration using Zhang's Method</papertitle>
+              <papertitle>Camera Calibration</papertitle>
               <br>
-              <a href="https://github.com/simc4-u/rbe549-auto-calib">project page</a>
-              <p>Implemented Zhang's camera calibration method with Levenberg-Marquardt optimization, reducing geometric reprojection error by 76% (from 2.15 to 0.511 pixels).</p>
-              <p>Refined camera calibration by optimizing radial distortion coefficients from k=[0,0] to k_opt=[0.168,-0.721] using the Levenberg-Marquardt algorithm.</p>
-            </td>
+              <a href="https://github.com/simc4-u/Camera-Calibration-Auto-Calib">project page</a>
+              <p>A robust camera calibration system based on Zhang's method, using checkerboard patterns to extract camera intrinsic and extrinsic parameters. The approach employs optimization techniques to minimize geometric errors and models lens distortion to achieve high-precision calibration results. This calibration pipeline significantly reduces reprojection errors, enabling accurate 3D measurements and reliable computer vision applications.</p>
+              /td>
           </tr>
 
           <!-- Panorama Image Stitching -->
           <tr onmouseout="pano_stop()" onmouseover="pano_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/panorama.png' width="160">
+                <img src='images/panoramic-stitching.jpg' width="160">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle>Panorama Image Stitching Using Computer Vision and Supervised Deep Learning</papertitle>
+              <papertitle>Classical and DL based Panorama Image Stitching </papertitle>
               <br>
-              <a href="https://github.com/simc4-u/rbe549-my-auto-pano">project page</a>
-              <p>Created a panorama stitching algorithm using Harris corner detection with ANMS and RANSAC-based homography estimation, implementing distance-weighted blending for seamless image transitions.</p>
-              <p>Developed dual deep learning homography approaches: supervised VGG-16 achieving ~3px EPE and unsupervised model with photometric loss, both outperforming traditional methods.</p>
+              <a href="https://github.com/simc4-u/Feature-based-Panorama-Image-Stitching">project page</a>
+              <p>A panorama stitching system that combines multiple images into wide-angle views with seamless transitions. The approach uses feature detection, robust homography estimation, and advanced blending techniques to handle perspective differences between images. In parallel, deep learning models for homography estimation were implemented, including both supervised architectures and unsupervised approaches with photometric loss functions, each demonstrating superior performance compared to conventional methods.</p>
             </td>
           </tr>
 
@@ -107,15 +104,14 @@
           <tr onmouseout="pb_stop()" onmouseover="pb_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/pblite.jpg' width="160">
+                <img src='images/boundary-edge.jpg' width="160">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
               <papertitle>Boundary Detection using PB-lite</papertitle>
               <br>
-              <a href="https://github.com/simc4-u/rbe549-alohomora">project page</a>
-              <p>Implemented PB-lite boundary detection integrating texture, brightness, and color gradient maps with Chi² distance computation, outperforming Sobel and Canny baselines.</p>
-              <p>Integrated multi-scale filter banks using DoG, Leung-Malik, and Gabor filters, which refined texture analysis and boosted edge feature extraction.</p>
+              <a href="https://github.com/simc4-u/Boundary-Detection-using-Pb-lite">project page</a>
+              <p>A multi-feature edge detection system that identifies object boundaries by analyzing texture, color, and intensity discontinuities across multiple scales. This implementation is based on a simplified version of Pablo Arbelaez's boundary detection algorithm, providing effective edge detection while being computationally more efficient than the original approach.</p>
             </td>
           </tr>
 
@@ -123,15 +119,14 @@
           <tr onmouseout="dl_stop()" onmouseover="dl_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/cifar10.jpg' width="160"> <!-- You may need to add this image to your media folder -->
+                <img src='media/cifar-classification.png' width="160"> <!-- You may need to add this image to your media folder -->
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle>Implementation of Deep Learning Architectures for Image Classification</papertitle>
+              <papertitle>CIFAR-10 Image Classification (ResNet, ResNeXt, DenseNet)</papertitle>
               <br>
               <a href="https://github.com/simc4-u/deep-learning-classification">project page</a> <!-- Update with real link -->
-              <p>Devised three distinct CNN architectures, ResNet-14, ResNeXt-14, and DenseNet, achieving 84% accuracy in image classification on a randomized CIFAR-10 dataset.</p>
-              <p>Enhanced model performance with batch normalization, data augmentation, and adaptive learning rate strategies.</p>
+              <p>A comparative study of modern CNN architectures for image classification, featuring custom implementations of ResNet-14, ResNeXt-14, and DenseNet networks built from scratch using PyTorch. The project explores the advantages of different deep learning approaches when applied to the CIFAR-10 dataset, achieving strong classification accuracy through the implementation of architectural elements and training optimizations including batch normalization, data augmentation, and adaptive learning rate scheduling.</p>   <p>Enhanced model performance with batch normalization, data augmentation, and adaptive learning rate strategies.</p>
             </td>
           </tr>
 
@@ -143,11 +138,10 @@
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle>Implementation of LQR and PD Controllers for 3D Quadrotor Trajectory Tracking</papertitle>
+              <papertitle> 3D Quadrotor Trajectory Tracking Controllers</papertitle>
               <br>
-              <a href="https://github.com/simc4-u/quadrotor-control">project page</a> <!-- Update with real link -->
-              <p>Designed an optimal LQR controller for a 6-DOF quadrotor using hover state linearization, reducing non-linear trajectory tracking error by 82% while maintaining stability.</p>
-              <p>Developed a PD control system for a quadrotor that maintained 5cm positioning accuracy during both random hovering states and complex trajectory tracking.</p>
+              <a href="https://github.com/simc4-u/Trajectory-Tracking-of-3D-Quadrotor-using-PID-and-LQR-Controller-">project page</a> <!-- Update with real link -->
+              <p>A quadrotor control system featuring an LQR controller based on hover-state linearization and a PD controller for position tracking. The implementation addresses the 6-DOF dynamics of the quadrotor, reducing trajectory tracking errors while maintaining stability during both hovering and complex flight paths.</p>
             </td>
           </tr>
 
@@ -155,15 +149,14 @@
           <tr onmouseout="manip_stop()" onmouseover="manip_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/manipulator.jpg' width="160"> <!-- You may need to add this image to your media folder -->
+                <img src='images/openmanipulator.gif' width="160"> <!-- You may need to add this image to your media folder -->
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
               <papertitle>Implementation of Kinematics and Motion Planning for OpenManipulatorX Using ROS 2</papertitle>
               <br>
-              <a href="https://github.com/simc4-u/ros2-manipulator">project page</a> <!-- Update with real link -->
-              <p>Programmed forward and inverse kinematics algorithms within ROS2 for the OpenManipulatorX, achieving an end-effector positioning accuracy of less than 7 mm.</p>
-              <p>Constructed PID and velocity controllers with ROS2 nodes for robotic arm's end effector, enabling seamless motion control for object manipulation tasks.</p>
+              <a href="https://github.com/simc4-u/SCARA-Manipulator">project page</a> <!-- Update with real link -->
+              <p>A robotic manipulation system for the OpenManipulatorX platform built on ROS2. The implementation includes forward and inverse kinematics algorithms for precise positioning, along with PID and velocity controllers for smooth motion execution. The system enables accurate object manipulation while maintaining millimeter-level positioning accuracy throughout the workspace.</p>        
             </td>
           </tr>
 
@@ -171,15 +164,14 @@
           <tr onmouseout="av_stop()" onmouseover="av_start()">
             <td style="padding:20px;width:25%;vertical-align:top">
               <div class="one">
-                <img src='media/carla.jpg' width="160"> <!-- You may need to add this image to your media folder -->
+                <img src='images/slam-system.jpg' width="160"> <!-- You may need to add this image to your media folder -->
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:top">
               <papertitle>Localization of Autonomous Vehicle in a GPS-Denied Environment</papertitle>
               <br>
               <a href="https://github.com/simc4-u/av-localization">project page</a> <!-- Update with real link -->
-              <p>Validated ORB-SLAM and RTAB-SLAM's performance for AV localization within the CARLA simulator, focusing on trajectory, localization, and maximum deviation errors compared to ground truth data.</p>
-              <p>Pioneered an optimized ICP-based mapping solution for LIDAR real-time data processing using ROS, reducing computational time by 30%.</p>
+              <p>An evaluation of SLAM approaches for vehicle localization in CARLA simulator, testing ORB-SLAM and RTAB-SLAM accuracy against ground truth trajectories. The project also includes a faster ICP-based mapping algorithm for LIDAR data that reduced processing time by 30% while preserving map quality.</p> 
             </td>
           </tr>
 
