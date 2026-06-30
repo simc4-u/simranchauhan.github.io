@@ -1,416 +1,462 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simran Chauhan — Perception Engineer</title>
+<meta name="author" content="Simran Chauhan">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/jpg" href="images/profilephoto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF9F6;
+    --bg-soft:#F2F1EC;
+    --line:#E7E6E1;
+    --line-soft:#EFEEE8;
+    --ink:#1A1A1A;
+    --ink-dim:#52524E;
+    --ink-faint:#8A8A84;
+    --accent:#2C5639;
+    --accent-deep:#1F3D2B;
+    --accent-soft:#EAF1EC;
+    --accent-line:#CADBCF;
+    --maxw:1060px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--bg);color:var(--ink-dim);font-family:'Inter',system-ui,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
 
-  <title>Simran Chauhan</title>
-  
-  <meta name="author" content="Simran Chauhan">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/jpg" href="images/profilephoto.jpg">
+  nav.topbar{position:sticky;top:0;z-index:50;background:rgba(250,249,246,0.9);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+  nav.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  nav.topbar .brand{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:19px;color:var(--ink)}
+  nav.topbar .links{display:flex;gap:26px}
+  nav.topbar .links a{color:var(--ink-dim);font-size:14px;font-weight:500;transition:color .15s}
+  nav.topbar .links a:hover{color:var(--accent);text-decoration:none}
+  @media(max-width:760px){nav.topbar .links{gap:14px}nav.topbar .links a{font-size:12.5px}nav.topbar .brand{display:none}}
+
+  header.hero{padding:72px 0 60px;border-bottom:1px solid var(--line-soft)}
+  .hero-grid{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+  .portrait-wrap{order:0}
+  @media(max-width:820px){.portrait-wrap{max-width:240px}}
+  .portrait{width:100%;border-radius:8px;display:block;box-shadow:0 18px 40px -16px rgba(0,0,0,0.32),0 4px 12px -6px rgba(0,0,0,0.18)}
+
+  h1.name{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:clamp(42px,6vw,64px);
+    line-height:1;letter-spacing:-0.01em;color:var(--ink);display:inline-block;
+    border-bottom:3px solid var(--accent-deep);padding-bottom:6px;margin-bottom:18px}
+  h1.name .dot{color:var(--accent)}
+  .subtitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(19px,2.4vw,24px);
+    color:var(--accent);margin-bottom:20px}
+  .bio{font-size:16px;color:var(--ink-dim);max-width:64ch;margin-bottom:8px}
+  .bio strong{color:var(--ink);font-weight:600}
+  .hero-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  .hero-links a{font-family:system-ui;font-size:13.5px;color:var(--ink);padding:9px 17px;
+    border:1px solid var(--line);border-radius:8px;background:var(--bg);transition:all .15s}
+  .hero-links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .hero-links a.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .hero-links a.primary:hover{background:var(--accent-deep);color:#fff}
+
+  section{padding:60px 0;border-bottom:1px solid var(--line-soft)}
+  .sec-head{margin-bottom:8px}
+  .sec-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:32px;color:var(--ink);
+    display:inline-block;position:relative;padding-left:2px}
+  .sec-head h2::before{content:"//";color:var(--accent);font-size:24px;margin-right:10px;font-weight:600;
+    font-family:'Playfair Display',serif}
+  .sec-sub{font-size:14px;color:var(--ink-faint);margin-bottom:36px;margin-top:2px}
+
+  .proj{display:grid;grid-template-columns:230px 1fr;gap:30px;padding:30px 0;border-top:1px solid var(--line-soft)}
+  .proj:first-of-type{border-top:none}
+  @media(max-width:760px){.proj{grid-template-columns:1fr;gap:16px}}
+  .proj-media{width:230px;height:161px;border-radius:8px;overflow:hidden;background:var(--bg-soft);
+    box-shadow:0 10px 26px -12px rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center}
+  @media(max-width:760px){.proj-media{width:100%;max-width:300px;height:auto;aspect-ratio:10/7}}
+  .proj-media img,.proj-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .proj-body .ptitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:21px;
+    color:var(--ink);margin-bottom:5px;line-height:1.25}
+  .proj-body .pmeta{font-size:12.5px;color:var(--ink-faint);margin-bottom:7px;font-family:'JetBrains Mono',monospace}
+  .proj-body .pmeta .flag{color:var(--accent)}
+  .proj-body .plink{font-family:'JetBrains Mono',monospace;font-size:12px;margin-bottom:13px;display:inline-block}
+  .proj-body p{font-size:15px;color:var(--ink-dim);margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;padding:4px 10px;border-radius:6px;
+    border:1px solid var(--line);color:var(--ink-dim);background:var(--bg-soft)}
+  .chip.hot{border-color:var(--accent-line);color:var(--accent-deep);background:var(--accent-soft)}
+
+  .row{display:grid;grid-template-columns:160px 1fr;gap:26px;padding:22px 0;border-top:1px solid var(--line-soft)}
+  .row:first-of-type{border-top:none}
+  @media(max-width:680px){.row{grid-template-columns:1fr;gap:8px}}
+  .row .rmedia img{width:100%;max-width:130px;border-radius:7px;box-shadow:0 6px 16px -8px rgba(0,0,0,0.25)}
+  .row .rtitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:18px;color:var(--ink);margin-bottom:3px}
+  .row .rwhere{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-faint);margin-bottom:8px}
+  .row .rwhere .when{color:var(--ink-dim)}
+  .row p{font-size:14.5px;color:var(--ink-dim);margin-bottom:7px}
+  .row .plink{font-family:'JetBrains Mono',monospace;font-size:11.5px}
+
+  .footer{padding:36px 0;text-align:right;font-size:12px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace}
+  .footer a{color:var(--ink-faint)}
+</style>
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <div style="width:100%;text-align:center;padding:10px 0;background-color:#000000;position:sticky;top:0;z-index:100;">
-  <nav style="max-width:800px;margin:0 auto;">
-    <a href="#home" style="margin:0 15px;text-decoration:none;font-weight:bold;color:white;">Home</a>
-    <a href="#projects" style="margin:0 15px;text-decoration:none;font-weight:bold;color:white;">Projects</a>
-    <a href="#work" style="margin:0 15px;text-decoration:none;font-weight:bold;color:white;">Work Experience</a>
-    <a href="#publications" style="margin:0 15px;text-decoration:none;font-weight:bold;color:white;">Publications</a>
-    <a href="#extra" style="margin:0 15px;text-decoration:none;font-weight:bold;color:white;">Extra Curricular</a>
-  </nav>
+
+<nav class="topbar">
+  <div class="wrap">
+    <span class="brand">Simran Chauhan</span>
+    <span class="links">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#work">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#extra">Activities</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="portrait-wrap"><img class="portrait" src="images/profilephoto.jpg" alt="Simran Chauhan"></div>
+      <div>
+        <h1 class="name">Simran Chauhan<span class="dot">.</span></h1>
+        <div class="subtitle">Perception&nbsp;&nbsp;|&nbsp;&nbsp;Off-Road Autonomy&nbsp;&nbsp;|&nbsp;&nbsp;3D Vision</div>
+        <p class="bio">I am a Master's student in Robotics Engineering at <strong>Worcester Polytechnic Institute</strong> (3.8 GPA), building <strong>real-time perception for autonomous vehicles in unstructured terrain</strong> — multi-sensor fusion, 3D vision, and deep models deployed in ROS2. I currently work as a Graduate Research Assistant at WPI's <strong>Autonomous Vehicle Mobility Institute (AVMI)</strong> on terrain mobility estimation and sensor simulation, and previously researched lensless stereo and Gaussian-splatting rendering at the <strong>Perception and Autonomous Robotics (PEAR) Lab</strong>. I'm currently seeking perception engineering roles.</p>
+        <div class="hero-links">
+          <a class="primary" href="mailto:schauhan@wpi.edu">Email</a>
+          <a href="images/SimranChauhan.pdf">Résumé</a>
+          <a href="https://www.linkedin.com/in/simran-chauhan-93184714b/">LinkedIn</a>
+          <a href="https://github.com/simc4-u/">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head"><h2>Research</h2></div>
+    <div class="sec-sub">Lab work at WPI AVMI &amp; PEAR — perception for off-road and aerial autonomy</div>
+
+    <div class="proj">
+      <div class="proj-media">
+        <video autoplay loop muted playsinline preload="none" poster="images/terrain.jpg">
+          <source src="videos/terrain_mobility.mp4" type="video/mp4"></video>
+      </div>
+      <div class="proj-body">
+        <div class="ptitle">Real-Time Heading-Aware Terrain Mobility Estimation for Off-Road AVs</div>
+        <div class="pmeta">WPI AVMI · <span class="flag">paper in prep, targeting IEEE RA-L</span></div>
+        <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
+        <p>Real-time off-road terrain mobility estimation: a physics-supervised CNN that turns a slow physics-simulation baseline (~30 min per multi-heading map) into millisecond-per-patch inference at 0.89 F1 on unseen terrain. Trained entirely on synthetic data from a custom fractal terrain generator rendered in Unreal Engine and physics-labeled, then deployed live as a ROS2 perception node publishing per-heading traversability inside a full off-road autonomy stack.</p>
+        <div class="chips">
+          <span class="chip hot">0.89 F1</span>
+          <span class="chip">10–20 ms / patch</span>
+          <span class="chip hot">real-time ROS2 node</span>
+          <span class="chip">synthetic-trained</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-media">
+        <video autoplay loop muted playsinline preload="none" poster="images/sensorsim.jpg">
+          <source src="videos/sensor_sim.mp4" type="video/mp4"></video>
+      </div>
+      <div class="proj-body">
+        <div class="ptitle">Sensor Simulation &amp; ROS2 Integration in Unreal Engine</div>
+        <div class="pmeta">WPI AVMI</div>
+        <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
+        <p>A custom sensor-simulation stack in Unreal Engine that generates unlimited labeled training data at zero cost: a raycast-based 3D spinning LiDAR and a camera with in-engine semantic segmentation, both streaming over ROS2. Required integrating rclUE into Unreal Engine 5.4 and fixing plugin build incompatibilities to get ROS2 publishing working on the updated engine.</p>
+        <div class="chips">
+          <span class="chip">3D LiDAR model</span>
+          <span class="chip">semantic camera</span>
+          <span class="chip hot">ROS2 / rclUE</span>
+          <span class="chip">Unreal Engine 5.4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-media"><img src="images/lensless.jpg" alt="Lensless stereo"></div>
+      <div class="proj-body">
+        <div class="ptitle">Lensless Bio-Inspired Stereo Vision for Micro Aerial Vehicles</div>
+        <div class="pmeta">WPI PEAR Lab</div>
+        <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
+        <p>A from-scratch lensless stereo camera — pinholes and a microlens array over a bare CMOS, no lenses — for ultra-light MAVs, where two overlapping views land as one blended image to be split into stereo. I trained a dual-decoder U-Net on data I generated without ground truth via an on-screen homography calibration, then built a servo-multiplexed rig to capture real stereo with epipolar geometric supervision. I made the call to stop the project when the achievable disparity showed it couldn't beat a conventional stereo camera on cost — the premise that justified the whole approach.</p>
+        <div class="chips">
+          <span class="chip">~50M-param U-Net</span>
+          <span class="chip hot">~0.84 val SSIM</span>
+          <span class="chip">servo-multiplexed rig</span>
+          <span class="chip">~12px disp @ 0.5m</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-media">
+        <video autoplay loop muted playsinline preload="none" poster="images/gsplat.jpg">
+          <source src="videos/gsplat_dof.mp4" type="video/mp4"></video>
+      </div>
+      <div class="proj-body">
+        <div class="ptitle">Controllable Depth-of-Field in Gaussian Splatting (VizFlyt UAV Simulator)</div>
+        <div class="pmeta">WPI PEAR Lab</div>
+        <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
+        <p>Added physically-based depth-of-field to a 3D Gaussian Splatting renderer (Splatfacto) inside VizFlyt, the lab's open-source photorealistic UAV simulator. Modeled thin-lens optics with adjustable focal distance and aperture, giving controllable focus/defocus for more realistic UAV perception testing.</p>
+        <div class="chips">
+          <span class="chip">3D Gaussian Splatting</span>
+          <span class="chip">thin-lens optics</span>
+          <span class="chip hot">VizFlyt simulator</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SELECTED PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><h2>Selected Projects</h2></div>
+    <div class="sec-sub">Graduate coursework &amp; independent projects in CV, SLAM, and control</div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/vio.jpg" alt="VIO"></div>
+      <div>
+        <div class="rtitle">Deep and Un-Deep Visual-Inertial Odometry</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A head-to-head of classical vs. learned VIO. A stereo MSCKF on the error-state manifold hits 0.094 m translational RMSE on EuRoC MH-01; a learned dual-stream network (CNN + LSTM) regressing 6-DoF pose did not recover metric scale — a concrete demonstration of why scale is unobservable under loose visual-inertial fusion.</p>
+        <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/ev2.jpg" alt="Einstein Vision"></div>
+      <div>
+        <div class="rtitle">Einstein Vision — Self-Driving Car Perception Stack</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A Tesla-inspired perception system on single-camera input integrating YOLOv11, Mask R-CNN, and DETIC for detection of lanes, vehicles, pedestrians, and traffic elements, with 3D pose estimation, motion tracking, and collision prediction rendered in Blender.</p>
+        <a class="plink" href="https://github.com/simc4-u/SFM-NERF">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/sfm.jpg" alt="SfM"></div>
+      <div>
+        <div class="rtitle">Classical Structure from Motion (SfM)</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A Structure-from-Motion pipeline reconstructing 3D scenes from 2D images, combining triangulation with robust feature matching, PnP camera-pose estimation, and sparse bundle adjustment to jointly refine cameras and points to sub-pixel precision.</p>
+        <a class="plink" href="https://github.com/simc4-u/SFM-NERF">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/camera-calibration.jpg" alt="Calibration"></div>
+      <div>
+        <div class="rtitle">Camera Calibration (Zhang's Method)</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A camera-calibration system using checkerboard patterns to extract intrinsics and extrinsics, with optimization to minimize geometric error and lens-distortion modeling for high-precision, low-reprojection-error results.</p>
+        <a class="plink" href="https://github.com/simc4-u/Camera-Calibration-Auto-Calib">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/panoramic-stitching.jpg" alt="Panorama"></div>
+      <div>
+        <div class="rtitle">Classical &amp; DL-Based Panorama Image Stitching</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>Panorama stitching combining feature detection, robust homography estimation, and blending into seamless wide-angle views — alongside deep homography-estimation models (both supervised and unsupervised with photometric loss).</p>
+        <a class="plink" href="https://github.com/ColinBalfour/Panoramic-Image-Stitching">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/slam-system.jpg" alt="AV Localization"></div>
+      <div>
+        <div class="rtitle">Localization of an AV in a GPS-Denied Environment</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>An evaluation of SLAM approaches for vehicle localization in CARLA — ORB-SLAM and RTAB-SLAM benchmarked against ground truth — plus a faster ICP-based LiDAR mapping algorithm that cut processing time while preserving map quality.</p>
+        <a class="plink" href="https://github.com/simc4-u/av-localization">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/cifar-classification.png" alt="CIFAR"></div>
+      <div>
+        <div class="rtitle">CIFAR-10 Image Classification (ResNet, ResNeXt, DenseNet)</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A from-scratch comparative study of modern CNN architectures — ResNet-14, ResNeXt-14, and DenseNet in PyTorch — on CIFAR-10, with batch normalization, data augmentation, and adaptive learning-rate scheduling.</p>
+        <a class="plink" href="https://github.com/simc4-u/deep-learning-classification">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/quadrotor.jpg" alt="Quadrotor"></div>
+      <div>
+        <div class="rtitle">3D Quadrotor Trajectory-Tracking Controllers</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A quadrotor control system with an LQR controller from hover-state linearization and a PD controller for position tracking, handling full 6-DOF dynamics while reducing trajectory-tracking error and maintaining stability.</p>
+        <a class="plink" href="https://github.com/simc4-u/Trajectory-Tracking-of-3D-Quadrotor-using-PID-and-LQR-Controller-">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/openmanipulator.gif" alt="Manipulator"></div>
+      <div>
+        <div class="rtitle">Kinematics &amp; Motion Planning for OpenManipulatorX (ROS2)</div>
+        <div class="rwhere">WPI · <span class="when">2025</span></div>
+        <p>A robotic-manipulation system for the OpenManipulatorX on ROS2 with forward and inverse kinematics for precise positioning, plus PID and velocity controllers for smooth, millimeter-accurate motion.</p>
+        <a class="plink" href="https://github.com/simc4-u/SCARA-Manipulator">project page →</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/sensorfusion.jpg" alt="Sensor Fusion"></div>
+      <div>
+        <div class="rtitle">Kalman-Filter Sensor Fusion</div>
+        <div class="rwhere">VNIT · <span class="when">earlier</span></div>
+        <p>A Kalman-filter fusion system combining SharpIR and ultrasonic sensors for high-fidelity environmental mapping, substantially reducing sensor noise and improving mapping accuracy in complex environments.</p>
+        <a class="plink" href="https://github.com/simc4-u/sensor-fusion">project page →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Experience</h2></div>
+    <div style="height:18px"></div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/wpilogo.jpg" alt="WPI"></div>
+      <div>
+        <div class="rtitle">Graduate Research Assistant</div>
+        <div class="rwhere">Autonomous Vehicle Mobility Institute (AVMI), WPI · <span class="when">Aug 2025 – Present</span></div>
+        <p>Research perception for off-road autonomous vehicles: a physics-supervised CNN for real-time heading-aware terrain mobility estimation (paper in prep, targeting IEEE RA-L) and a custom LiDAR/camera sensor-simulation pipeline in Unreal Engine with ROS2 integration.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/wpilogo.jpg" alt="WPI"></div>
+      <div>
+        <div class="rtitle">Graduate Student Researcher</div>
+        <div class="rwhere">Perception and Autonomous Robotics (PEAR) Lab, WPI · <span class="when">Jun 2025 – Nov 2025</span></div>
+        <p>Researched lensless bio-inspired stereo vision for micro aerial vehicles (sensor design, calibration, deep blended-to-stereo separation) and implemented controllable depth-of-field rendering in a 3D Gaussian Splatting model within the lab's open-source VizFlyt simulator.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/futurelablogo.jpg" alt="FuTURE Lab"></div>
+      <div>
+        <div class="rtitle">Graduate Researcher</div>
+        <div class="rwhere">FuTURE Lab, WPI · <span class="when">Aug 2024 – May 2025</span></div>
+        <p>Worked with Prof. Giovanni Pittiglio on an electromagnetic localization system for cardiac ablation, implementing precision localization algorithms for accurate catheter tracking during interventions.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/synergylogo.jpg" alt="Synergy"></div>
+      <div>
+        <div class="rtitle">Senior Technical Executive</div>
+        <div class="rwhere">Synergy Denmark A/S, Mumbai, India · <span class="when">Nov 2023 – Jul 2024</span></div>
+        <p>Led data integration for the company's AI solution, liaising between users and developers, and supported technical, business-performance, and project teams with data analysis and troubleshooting.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/synergylogo.jpg" alt="Synergy"></div>
+      <div>
+        <div class="rtitle">Technical Trainee — Electrical &amp; Automation</div>
+        <div class="rwhere">Synergy Denmark A/S, Mumbai, India · <span class="when">Nov 2021 – Oct 2023</span></div>
+        <p>Worked with electrical and automation leadership to resolve system malfunctions and reduce maintenance, and built a BI dashboard for resource allocation alongside automated solutions that improved team efficiency.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head"><h2>Publications</h2></div>
+    <div style="height:18px"></div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/icamelogo.jpg" alt="RA-L"></div>
+      <div>
+        <div class="rtitle">Real-Time Heading-Aware Terrain Mobility Estimation for Off-Road Autonomous Vehicles</div>
+        <div class="rwhere">In preparation, targeting IEEE Robotics and Automation Letters (RA-L), 2026</div>
+        <p>Simran Chauhan, et al.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/icamelogo.jpg" alt="ICAME"></div>
+      <div>
+        <div class="rtitle">IoT-Based Ambiance Monitoring System</div>
+        <div class="rwhere">Intl. Conference on Advances in Mechanical Engineering (ICAME), 2020</div>
+        <p>H. S. Parihar, R. Nagula, M. Bumb, D. Gada, S. Bajjuri, R. Agarwal, and Simran Chauhan</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/icamelogo.jpg" alt="ICAME"></div>
+      <div>
+        <div class="rtitle">Hand Gesture Control of Computer Features</div>
+        <div class="rwhere">Intl. Conference on Advances in Mechanical Engineering (ICAME), 2020</div>
+        <p>R. Runwal, S. Dhonde, J. Pardhi, S. Kumar, A. Varude, M. Sarode, M. Bhoyar, Simran Chauhan, and N. Marne</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="extra">
+  <div class="wrap">
+    <div class="sec-head"><h2>Activities</h2></div>
+    <div style="height:18px"></div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/wpilogo.jpg" alt="WPI"></div>
+      <div>
+        <div class="rtitle">Graduate Student Ambassador</div>
+        <div class="rwhere">WPI, Worcester · <span class="when">Feb 2025 – Present</span></div>
+        <p>Represent the Robotics Engineering program and engage with prospective graduate students.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/Ivlabslogo.jpg" alt="IVLabs"></div>
+      <div>
+        <div class="rtitle">Member, IVLabs (Robotics Club of VNIT)</div>
+        <div class="rwhere">VNIT Nagpur, India · <span class="when">Jun 2018 – Present</span></div>
+        <p>Collaborated on robotics projects and mentored junior members in technical skills.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rmedia"><img src="images/ieeelogo.png" alt="IEEE"></div>
+      <div>
+        <div class="rtitle">Vice Chairman, IEEE VNIT Student Branch</div>
+        <div class="rwhere">VNIT Nagpur, India · <span class="when">Jul 2019 – Jul 2020</span></div>
+        <p>Led student-branch activities and organized technical workshops and events.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="footer">
+  <div class="wrap">Base structure from <a href="https://jonbarron.info/">Jon Barron's template</a></div>
 </div>
 
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center" id="home">
-                <n style="font-weight: bold; font-size: 38px;">Simran Chauhan</n>
-              </p>
-              <p>I am a Master's student in <a href="https://www.wpi.edu/academics/departments/robotics-engineering">
-                Robotics Engineering</a> at Worcester Polytechnic Institute (WPI), maintaining a perfect 4.0 GPA. My coursework includes Computer Vision, Machine Learning, Robot Control, and Robot Manipulation.
-              </p>
-              <p>Previously, I worked at Synergy Denmark A/S as a Senior Technical Executive, where I led data integration for an innovative AI solution and served as a key liaison between end-users and the development team. I also worked at Maersk Tankers as a Technical Trainee, gaining expertise in vessel electrical systems.
-              </p>
-              <p>
-                I obtained my Bachelor's in Electrical Engineering from <a href="https://www.vnit.ac.in/">VNIT</a> (India)
-                in 2021, where I was actively engaged in projects as part of the robotics club, <a href="https://www.ivlabs.in/">IVLabs</a>, and served as Vice Chairman of the IEEE VNIT Student Branch.
-              </p>
-              <p>
-                My technical expertise includes Python, C++, ROS/ROS2, OpenCV, PyTorch, and various tools for robotics and computer vision. I am passionate about pushing the boundaries in visual perception, autonomous systems, and robotic control. Currently, I am seeking opportunities in robotics and computer vision.
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:schauhan@wpi.edu">Email</a> &nbsp/&nbsp
-                <a href="images/SimranChauhan.pdf">Resume</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/simran-chauhan-93184714b/">LinkedIn</a> &nbsp/&nbsp
-                <a href="https://github.com/simc4-u/">Github</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/profilephoto.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profilephoto.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        <!-- Research & Projects -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading style="font-weight: bold; font-size: 26px;" id="projects">Research & Projects</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <!-- Einstein Vision - Self-Driving Car Perception Stack -->
-          <tr onmouseout="sfm_stop()" onmouseover="sfm_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/ev2.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Einstein Vision - Self-Driving Car Perception Stack</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/Einstein-Vision">project page</a>
-              <p>Built a Tesla-inspired autonomous vehicle perception system using computer vision and deep learning on single-camera input. Integrated YOLOv11, Mask R-CNN, and DETIC models for real-time detection of lanes, vehicles, pedestrians, and traffic elements. Features include 3D pose estimation, motion tracking, collision prediction, and brake light detection, with final output rendered as immersive 3D visualizations in Blender.</p>
-            </td>
-          </tr>
-
-          <!-- 3D Reconstruction via Structure from Motion -->
-          <tr onmouseout="sfm_stop()" onmouseover="sfm_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/sfm.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Classical Structure from Motion(SfM)</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/SFM-NERF">project page</a>
-              <p>Reconstructed a 3D scene from a collection of 2D images by implementing a Structure from Motion pipeline with advanced geometric optimization techniques. The approach combined triangulation methods with robust feature matching, PnP algorithms for precise camera pose estimation, and sparse bundle adjustment to refine both camera parameters and 3D points simultaneously. This pipeline enables developing complete 3D models from 2D images, creating accurate digital representations of real-world scenes with sub-pixel precision.</p>
-             </td>
-          </tr>
-
-          <!-- Camera Calibration using Zhang's Method -->
-          <tr onmouseout="calib_stop()" onmouseover="calib_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/camera-calibration.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Camera Calibration</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/Camera-Calibration-Auto-Calib">project page</a>
-              <p>A robust camera calibration system based on Zhang's method, using checkerboard patterns to extract camera intrinsic and extrinsic parameters. The approach employs optimization techniques to minimize geometric errors and models lens distortion to achieve high-precision calibration results. This calibration pipeline significantly reduces reprojection errors, enabling accurate 3D measurements and reliable computer vision applications.</p>
-              </td>
-          </tr>
-
-          <!-- Panorama Image Stitching -->
-          <tr onmouseout="pano_stop()" onmouseover="pano_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/panoramic-stitching.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Classical and DL based Panorama Image Stitching</strong></papertitle>
-              <br>
-              <a href="https://github.com/ColinBalfour/Panoramic-Image-Stitching">project page</a>
-              <p>A panorama stitching system that combines multiple images into wide-angle views with seamless transitions. The approach uses feature detection, robust homography estimation, and advanced blending techniques to handle perspective differences between images. In parallel, deep learning models for homography estimation were implemented, including both supervised architectures and unsupervised approaches with photometric loss functions, each demonstrating superior performance compared to conventional methods.</p>
-            </td>
-          </tr>
-
-          <!-- Boundary detection using PB-lite -->
-          <tr onmouseout="pb_stop()" onmouseover="pb_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/boundary-edge.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Boundary Detection using PB-lite</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/Boundary-Detection-using-Pb-lite">project page</a>
-              <p>A multi-feature edge detection system that identifies object boundaries by analyzing texture, color, and intensity discontinuities across multiple scales. This implementation is based on a simplified version of Pablo Arbelaez's boundary detection algorithm, providing effective edge detection while being computationally more efficient than the original approach.</p>
-            </td>
-          </tr>
-
-          <!-- Implementation of Deep Learning Architectures for Image Classification -->
-          <tr onmouseout="dl_stop()" onmouseover="dl_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/cifar-classification.png' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>CIFAR-10 Image Classification (ResNet, ResNeXt, DenseNet)</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/deep-learning-classification">project page</a>
-              <p>A comparative study of modern CNN architectures for image classification, featuring custom implementations of ResNet-14, ResNeXt-14, and DenseNet networks built from scratch using PyTorch. The project explores the advantages of different deep learning approaches when applied to the CIFAR-10 dataset, achieving strong classification accuracy through the implementation of architectural elements and training optimizations including batch normalization, data augmentation, and adaptive learning rate scheduling.</p>   <p>Enhanced model performance with batch normalization, data augmentation, and adaptive learning rate strategies.</p>
-            </td>
-          </tr>
-
-          <!-- Implementation of LQR and PD Controllers for 3D Quadrotor Trajectory Tracking -->
-          <tr onmouseout="quad_stop()" onmouseover="quad_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/quadrotor.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>3D Quadrotor Trajectory Tracking Controllers</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/Trajectory-Tracking-of-3D-Quadrotor-using-PID-and-LQR-Controller-">project page</a>
-              <p>A quadrotor control system featuring an LQR controller based on hover-state linearization and a PD controller for position tracking. The implementation addresses the 6-DOF dynamics of the quadrotor, reducing trajectory tracking errors while maintaining stability during both hovering and complex flight paths.</p>
-            </td>
-          </tr>
-
-          <!-- Implementation of Kinematics and Motion Planning for OpenManipulatorX Using ROS 2 -->
-          <tr onmouseout="manip_stop()" onmouseover="manip_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/openmanipulator.gif' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Implementation of Kinematics and Motion Planning for OpenManipulatorX Using ROS 2</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/SCARA-Manipulator">project page</a>
-              <p>A robotic manipulation system for the OpenManipulatorX platform built on ROS2. The implementation includes forward and inverse kinematics algorithms for precise positioning, along with PID and velocity controllers for smooth motion execution. The system enables accurate object manipulation while maintaining millimeter-level positioning accuracy throughout the workspace.</p>        
-            </td>
-          </tr>
-
-          <!-- Localization of Autonomous Vehicle in a GPS-Denied Environment -->
-          <tr onmouseout="av_stop()" onmouseover="av_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/slam-system.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Localization of Autonomous Vehicle in a GPS-Denied Environment</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/av-localization">project page</a>
-              <p>An evaluation of SLAM approaches for vehicle localization in CARLA simulator, testing ORB-SLAM and RTAB-SLAM accuracy against ground truth trajectories. The project also includes a faster ICP-based mapping algorithm for LIDAR data that reduced processing time by 30% while preserving map quality.</p> 
-            </td>
-          </tr>
-
-          <!-- Sensor Fusion Algorithm -->
-          <tr onmouseout="sensor_stop()" onmouseover="sensor_start()">
-            <td style="padding:20px;width:25%;vertical-align:top">
-              <div class="one">
-                <img src='images/sensorfusion.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:top">
-              <papertitle><strong>Sensor Fusion Algorithm</strong></papertitle>
-              <br>
-              <a href="https://github.com/simc4-u/sensor-fusion">project page</a>
-              <p>Built Kalman filter algorithm that reduced sensor noise by 87%, enabling high-fidelity environmental mapping for autonomous navigation.</p>
-              <p>Integrated multi-sensor fusion system combining SharpIR and Ultrasonic sensors, boosting mapping accuracy by 63% in complex environments.</p>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        <!-- Work Experience Section -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-             <heading style="font-weight: bold; font-size: 26px;" id="work">Work Experience</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
-          <!-- FuTURE Lab Graduate Researcher Position -->
-          <tr onmouseout="future_stop()" onmouseover="future_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='images/futurelablogo.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle><strong>Graduate Researcher</strong></papertitle>
-              <br>
-              <em>FuTURE Lab, Worcester Polytechnic Institute</em> &nbsp; Aug 2024 – Present
-              <p>As a Research Student at FuTURE Lab, I collaborate with Professor Giovanni Pittiglio on developing an electromagnetic localization system for cardiac ablation procedures. This research implements precision localization algorithms to enable the accurate tracking of catheters during interventions.</p>
-            </td>
-          </tr>
-          
-          <!-- Senior Technical Executive -->
-          <tr onmouseout="synergy_stop()" onmouseover="synergy_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='images/synergylogo.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle><strong>Senior Technical Executive: Technical</strong></papertitle>
-              <br>
-              <em>Synergy Denmark A/S, Mumbai, India</em> &nbsp; Nov 2023 – Jul 2024
-              <p>Led data integration for the company's AI solution, liaising between users and developers while maintaining stakeholder alignment. Supported Technical, Business Performance, and Project teams with data analysis, queries, and technical troubleshooting.</p>
-            </td>
-          </tr>
-          
-          <!-- Technical Trainee: Electrical & Automation -->
-          <tr onmouseout="trainee_stop()" onmouseover="trainee_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='images/synergylogo.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle><strong>Technical Trainee: Electrical & Automation</strong></papertitle>
-              <br>
-              <em>Synergy Denmark A/S, Mumbai, India</em> &nbsp; Nov 2021 – Oct 2023
-              <p>Collaborated with electrical and automation leadership to resolve system malfunctions and reduce maintenance needs. Developed BI dashboard for optimizing resource allocation and implemented automated solutions that enhanced team efficiency.</p>
-           </td>
-          </tr>
-          
-<!--           <!-- Maersk Technical Trainee -->
-<!--           <tr onmouseout="maersk_stop()" onmouseover="maersk_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='media/maersk_logo.png' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle><strong>Technical Trainee</strong></papertitle>
-              <br>
-              <em>Maersk Tankers Pvt Ltd</em> &nbsp; Jul 2021 - Nov 2021
-              <p>Acquired in-depth knowledge of vessel electrical systems through 400+ hours of training from electrical superintendents.</p>
-              <p>Gained proficiency in tracing wiring diagrams and completed soft skills training in project management and communication.</p>
-            </td>
-          </tr>
-        </tbody></table> --> -->
-        
-        <!-- Publications Section -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading style="font-weight: bold; font-size: 26px;" id="publications">Publications</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='images/icamelogo.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle><strong>IoT-Based Ambiance Monitoring System</strong></papertitle>
-              <br>
-              <em>International Conference on Advances in Mechanical Engineering (ICAME), 2020</em>
-              <p>Hritwik Singh Parihar, Rajesh Nagula, Mayank Bumb, Danish Gada, Sharan Bajjuri, Rishesh Agarwal, and Simran Chauhan</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='images/icamelogo.jpg' width="180">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle><strong>Hand Gesture Control of Computer Features</strong></papertitle>
-              <br>
-              <em>International Conference on Advances in Mechanical Engineering (ICAME), 2020</em>
-              <p>Rishabh Runwal, Shivraj Dhonde, Jatin Pardhi, Suraj Kumar, Aadesh Varude, Mayuresh Sarode, Mayuresh Bhoyar, Simran Chauhan, and Neha Marne</p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- Extra Curricular Section -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading style="font-weight: bold; font-size: 26px;" id="extra">Extra Curricular</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-        <!-- Graduate Student Ambassador -->
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <img src='images/wpilogo.jpg' width="180">
-            </div>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <papertitle><strong>Graduate Student Ambassador</strong></papertitle>
-            <br>
-            <em>WPI, Worcester, United States</em> &nbsp; Feb 2025 – Present
-            <p>Represent the Robotics Engineering program and engage with prospective graduate students.</p>
-          </td>
-        </tr>
-
-        <!-- CSR Initiative -->
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <img src='images/synergylogo.jpg' width="180">
-            </div>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <papertitle><strong>Member, CSR (Corporate Social Responsibility Initiative)</strong></papertitle>
-            <br>
-            <em>Synergy DK A/S, India</em> &nbsp; Jul 2024 – Aug 2024
-            <p>Participated in community outreach and social responsibility programs.</p>
-          </td>
-        </tr>
-
-        <!-- IVLabs -->
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <img src='images/Ivlabslogo.jpg' width="180">
-            </div>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <papertitle><strong>Member, IVLabs (Robotics Club of VNIT)</strong></papertitle>
-            <br>
-            <em>VNIT Nagpur, India</em> &nbsp; Jun 2018 – Present
-            <p>Collaborated on robotics projects and mentored junior members in technical skills.</p>
-          </td>
-        </tr>
-
-        <!-- IEEE VNIT Student Branch -->
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <img src='images/ieeelogo.png' width="180">
-            </div>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <papertitle><strong>Vice Chairman, IEEE VNIT Student Branch</strong></papertitle>
-            <br>
-            <em>VNIT Nagpur, India</em> &nbsp; Jul 2019 – Jul 2020
-            <p>Led student branch activities and organized technical workshops and events.</p>
-          </td>
-        </tr>
-      </tbody></table>
-      
-        <!-- Footnote -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                Source code and style cloned from  <a href="https://jonbarron.info/">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
 </body>
-
 </html>
