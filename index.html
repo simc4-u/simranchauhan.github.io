@@ -125,11 +125,11 @@
       <div class="portrait-wrap"><img class="portrait" src="images/profilephoto.jpg" alt="Simran Chauhan"></div>
       <div>
         <h1 class="name">Simran Chauhan<span class="dot">.</span></h1>
-        <div class="subtitle">Perception&nbsp;&nbsp;|&nbsp;&nbsp;Off-Road Autonomy&nbsp;&nbsp;|&nbsp;&nbsp;3D Vision</div>
-        <p class="bio">I am a Master's student in Robotics Engineering at <strong>Worcester Polytechnic Institute</strong> (3.8 GPA), building <strong>real-time perception for autonomous vehicles in unstructured terrain</strong> — multi-sensor fusion, 3D vision, and deep models deployed in ROS2. I currently work as a Graduate Research Assistant at WPI's <strong>Autonomous Vehicle Mobility Institute (AVMI)</strong> on terrain mobility estimation and sensor simulation, and previously researched lensless stereo and Gaussian-splatting rendering at the <strong>Perception and Autonomous Robotics (PEAR) Lab</strong>. I'm currently seeking perception engineering roles.</p>
+        <div class="subtitle">Perception&nbsp;&nbsp;|&nbsp;&nbsp;Off-Road Autonomy&nbsp;&nbsp;|&nbsp;&nbsp;3D Vision&nbsp;&nbsp;|&nbsp;&nbsp;Sensor Fusion</div>
+        <p class="bio">I am a Master's student in Robotics Engineering at <strong>Worcester Polytechnic Institute</strong>, building <strong>real-time perception for autonomous vehicles in unstructured terrain</strong> — multi-sensor fusion, 3D vision, and deep models deployed in ROS2. I currently work as a Graduate Research Assistant at WPI's <strong>Autonomous Vehicle Mobility Institute (AVMI)</strong> on terrain mobility estimation and sensor simulation, and previously researched lensless stereo and Gaussian-splatting rendering at the <strong>Perception and Autonomous Robotics (PEAR) Lab</strong>. I'm currently seeking perception engineering roles.</p>
         <div class="hero-links">
-          <a class="primary" href="mailto:schauhan@wpi.edu">Email</a>
-          <a href="images/SimranChauhan.pdf">Résumé</a>
+          <a class="primary" href="mailto:simran.chauhanwpi@gmail.com">Email</a>
+          <a href="images/SimranChauhan.pdf">Resume</a>
           <a href="https://www.linkedin.com/in/simran-chauhan-93184714b/">LinkedIn</a>
           <a href="https://github.com/simc4-u/">GitHub</a>
         </div>
@@ -151,14 +151,15 @@
       </div>
       <div class="proj-body">
         <div class="ptitle">Real-Time Heading-Aware Terrain Mobility Estimation for Off-Road AVs</div>
-        <div class="pmeta">WPI AVMI · <span class="flag">paper in prep, targeting IEEE RA-L</span></div>
+        <div class="pmeta">WPI Autonomous Vehicle Mobility Institute · <span class="flag">paper in prep, targeting IEEE RA-L</span></div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
         <p>Real-time off-road terrain mobility estimation: a physics-supervised CNN that turns a slow physics-simulation baseline (~30 min per multi-heading map) into millisecond-per-patch inference at 0.89 F1 on unseen terrain. Trained entirely on synthetic data from a custom fractal terrain generator rendered in Unreal Engine and physics-labeled, then deployed live as a ROS2 perception node publishing per-heading traversability inside a full off-road autonomy stack.</p>
         <div class="chips">
-          <span class="chip hot">0.89 F1</span>
-          <span class="chip">10–20 ms / patch</span>
-          <span class="chip hot">real-time ROS2 node</span>
+          <span class="chip hot">WM FractalTerrain Generation</span>
+          <span class="chip hot">real-time Traversability Map</span>
+          <span class="chip">ROS2</span>
           <span class="chip">synthetic-trained</span>
+           <span class="chip">Unreal Engine 5.4</span>
         </div>
       </div>
     </div>
@@ -170,13 +171,15 @@
       </div>
       <div class="proj-body">
         <div class="ptitle">Sensor Simulation &amp; ROS2 Integration in Unreal Engine</div>
-        <div class="pmeta">WPI AVMI</div>
+        <div class="pmeta">WPI Autonomous Vehicle Mobility Institute</div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
         <p>A custom sensor-simulation stack in Unreal Engine that generates unlimited labeled training data at zero cost: a raycast-based 3D spinning LiDAR and a camera with in-engine semantic segmentation, both streaming over ROS2. Required integrating rclUE into Unreal Engine 5.4 and fixing plugin build incompatibilities to get ROS2 publishing working on the updated engine.</p>
         <div class="chips">
           <span class="chip">3D LiDAR model</span>
-          <span class="chip">semantic camera</span>
-          <span class="chip hot">ROS2 / rclUE</span>
+          <span class="chip">Monocular Camera model</span>
+          <span class="chip">Camera Segmentation</span>
+          <span class="chip">LiDAR Segmentation</span>
+          <span class="chip hot">ROS2</span>
           <span class="chip">Unreal Engine 5.4</span>
         </div>
       </div>
@@ -186,7 +189,7 @@
       <div class="proj-media"><img src="images/lensless.jpg" alt="Lensless stereo"></div>
       <div class="proj-body">
         <div class="ptitle">Lensless Bio-Inspired Stereo Vision for Micro Aerial Vehicles</div>
-        <div class="pmeta">WPI PEAR Lab</div>
+        <div class="pmeta">WPI Perception and Autonomous Robotics Group(PeAR)</div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
         <p>A from-scratch lensless stereo camera — pinholes and a microlens array over a bare CMOS, no lenses — for ultra-light MAVs, where two overlapping views land as one blended image to be split into stereo. I trained a dual-decoder U-Net on data I generated without ground truth via an on-screen homography calibration, then built a servo-multiplexed rig to capture real stereo with epipolar geometric supervision. I made the call to stop the project when the achievable disparity showed it couldn't beat a conventional stereo camera on cost — the premise that justified the whole approach.</p>
         <div class="chips">
@@ -205,7 +208,7 @@
       </div>
       <div class="proj-body">
         <div class="ptitle">Controllable Depth-of-Field in Gaussian Splatting (VizFlyt UAV Simulator)</div>
-        <div class="pmeta">WPI PEAR Lab</div>
+        <div class="pmeta">WPI Perception and Autonomous Robotics Group(PeAR)</div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
         <p>Added physically-based depth-of-field to a 3D Gaussian Splatting renderer (Splatfacto) inside VizFlyt, the lab's open-source photorealistic UAV simulator. Modeled thin-lens optics with adjustable focal distance and aperture, giving controllable focus/defocus for more realistic UAV perception testing.</p>
         <div class="chips">
@@ -219,7 +222,7 @@
   </div>
 </section>
 
-<!-- SELECTED PROJECTS -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
     <div class="sec-head"><h2>Selected Projects</h2></div>
