@@ -71,31 +71,33 @@
     display:inline-block;position:relative;padding-left:2px}
   .sec-sub{font-size:14px;color:var(--ink-faint);margin-bottom:36px;margin-top:2px}
 
-  .proj{display:grid;grid-template-columns:370px 1fr;gap:30px;padding:30px 0;border-top:1px solid var(--line-soft);align-items:start}
+  .proj{display:grid;grid-template-columns:300px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line-soft)}
   .proj:first-of-type{border-top:none}
-  @media(max-width:820px){.proj{grid-template-columns:1fr;gap:16px}}
+  @media(max-width:760px){.proj{grid-template-columns:1fr;gap:16px}}
+  .proj-media{width:300px;height:200px;border-radius:8px;overflow:hidden;background:var(--bg-soft);
+    box-shadow:0 10px 26px -12px rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center}
+  @media(max-width:760px){.proj-media{width:100%;max-width:340px;height:auto;aspect-ratio:3/2}}
+  .proj-media img,.proj-media video{width:100%;height:100%;object-fit:cover;display:block}
 
-  /* ---- carousel (Option B): side-by-side, wide media, no crop ---- */
-  .carousel{position:relative;width:370px;aspect-ratio:3/2;border-radius:8px;overflow:hidden;
-    background:#14150F;box-shadow:0 10px 26px -12px rgba(0,0,0,0.3)}
-  @media(max-width:820px){.carousel{width:100%;max-width:420px}}
-  .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none;
-    display:flex;align-items:center;justify-content:center}
+  /* ---- carousel (Option B: video self-times, images flip on 3s timer) ---- */
+  .carousel{position:relative;width:300px;height:200px;border-radius:8px;overflow:hidden;
+    background:var(--bg-soft);box-shadow:0 10px 26px -12px rgba(0,0,0,0.28)}
+  @media(max-width:760px){.carousel{width:100%;max-width:340px;height:auto;aspect-ratio:3/2}}
+  .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
   .carousel .slide.active{opacity:1;pointer-events:auto}
-  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:contain;display:block}
-  .carousel .dots{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);
+  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:cover;display:block}
+  .carousel .dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
     display:flex;gap:6px;z-index:3}
-  .carousel .dots button{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;
-    background:rgba(255,255,255,0.5);transition:background .2s}
+  .carousel .dots button{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;
+    background:rgba(255,255,255,0.55);transition:background .2s}
   .carousel .dots button.on{background:#fff}
   .carousel .navarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-    width:30px;height:30px;border:none;border-radius:50%;background:rgba(0,0,0,0.4);color:#fff;
-    cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border:none;border-radius:50%;background:rgba(0,0,0,0.32);color:#fff;
+    cursor:pointer;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;
     opacity:0;transition:opacity .2s}
   .carousel:hover .navarrow{opacity:1}
-  .carousel .navarrow.prev{left:10px}
-  .carousel .navarrow.next{right:10px}
-  .proj-body{min-width:0}
+  .carousel .navarrow.prev{left:8px}
+  .carousel .navarrow.next{right:8px}
   .proj-body .ptitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:21px;
     color:var(--ink);margin-bottom:5px;line-height:1.25}
   .proj-body .pmeta{font-size:12.5px;color:var(--ink-faint);margin-bottom:7px;font-family:'JetBrains Mono',monospace}
@@ -167,9 +169,10 @@
           <video loop muted playsinline preload="none" poster="images/terrain.jpg">
             <source src="videos/Untitled design(4).mp4" type="video/mp4"></video>
         </div>
-        <div class="slide" data-type="image"><img src="images/terrain_1.jpg" alt="Generated fractal terrain"></div>
-        <div class="slide" data-type="image"><img src="images/terrain_2.jpg" alt="Terrain in Unreal Engine"></div>
-        <div class="slide" data-type="image"><img src="images/terrain_3.jpg" alt="Mobility map output"></div>
+        <div class="slide" data-type="image"><img src="images/dash.png" alt="Generated fractal terrain"></div>
+        <div class="slide" data-type="image"><img src="images/terrainimported.png" alt="Terrain in Unreal Engine"></div>
+        <div class="slide" data-type="image"><img src="images/capture2med2.jpeg" alt="Terrain generated"></div>
+        <div class="slide" data-type="image"><img src="images/capture2med2pass.jpeg" alt="Mobility map output"></div>
       </div>
       <div class="proj-body">
         <div class="ptitle">Real-Time Heading-Aware Terrain Mobility Estimation for Off-Road AVs</div>
