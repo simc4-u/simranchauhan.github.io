@@ -52,8 +52,14 @@
 
   h1.name{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:clamp(42px,6vw,64px);
     line-height:1;letter-spacing:-0.01em;color:var(--ink);display:inline-block;
-    border-bottom:3px solid var(--accent-deep);padding-bottom:6px;margin-bottom:18px}
-  h1.name .dot{color:var(--accent)}
+    border-bottom:3px solid var(--accent-deep);padding-bottom:6px;margin-bottom:18px;
+    opacity:0;transform:translateY(12px);animation:nameIn 0.9s cubic-bezier(.2,.7,.2,1) 0.1s forwards;
+    background-image:linear-gradient(90deg,var(--accent) 0%,var(--ink) 40%);
+    -webkit-background-clip:text;background-clip:text;background-size:200% 100%;background-position:100% 0}
+  @keyframes nameIn{to{opacity:1;transform:translateY(0)}}
+  h1.name .dot{color:var(--accent);display:inline-block;animation:dotPulse 2.2s ease-in-out 1s infinite}
+  @keyframes dotPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.7}}
+  @media(prefers-reduced-motion:reduce){h1.name{opacity:1;transform:none;animation:none}h1.name .dot{animation:none}}
   .subtitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(19px,2.4vw,24px);
     color:var(--accent);margin-bottom:20px}
   .bio{font-size:16px;color:var(--ink-dim);max-width:64ch;margin-bottom:8px}
@@ -71,7 +77,7 @@
     display:inline-block;position:relative;padding-left:2px}
   .sec-sub{font-size:14px;color:var(--ink-faint);margin-bottom:36px;margin-top:2px}
 
-  .proj{display:grid;grid-template-columns:300px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line-soft)}
+  .proj{display:grid;grid-template-columns:390px 1fr;gap:40px;padding:30px 0;border-top:1px solid var(--line-soft)}
   .proj:first-of-type{border-top:none}
   @media(max-width:760px){.proj{grid-template-columns:1fr;gap:16px}}
   .proj-media{width:300px;height:200px;border-radius:8px;overflow:hidden;background:var(--bg-soft);
@@ -109,10 +115,10 @@
     border:1px solid var(--line);color:var(--ink-dim);background:var(--bg-soft)}
   .chip.hot{border-color:var(--accent-line);color:var(--accent-deep);background:var(--accent-soft)}
 
-  .row{display:grid;grid-template-columns:160px 1fr;gap:26px;padding:22px 0;border-top:1px solid var(--line-soft)}
+  .row{display:grid;grid-template-columns:230px 1fr;gap:30px;padding:24px 0;border-top:1px solid var(--line-soft)}
   .row:first-of-type{border-top:none}
   @media(max-width:680px){.row{grid-template-columns:1fr;gap:8px}}
-  .row .rmedia img{width:100%;max-width:130px;border-radius:7px;box-shadow:0 6px 16px -8px rgba(0,0,0,0.25)}
+  .row .rmedia img{width:100%;max-width:210px;border-radius:7px;box-shadow:0 6px 16px -8px rgba(0,0,0,0.25)}
   .row .rtitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:18px;color:var(--ink);margin-bottom:3px}
   .row .rwhere{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-faint);margin-bottom:8px}
   .row .rwhere .when{color:var(--ink-dim)}
@@ -145,7 +151,7 @@
       <div>
         <h1 class="name">Simran Chauhan<span class="dot">.</span></h1>
         <div class="subtitle">Perception&nbsp;&nbsp;|&nbsp;&nbsp;Off-Road Autonomy&nbsp;&nbsp;|&nbsp;&nbsp;3D Vision&nbsp;&nbsp;|&nbsp;&nbsp;Sensor Fusion</div>
-        <p class="bio">I'm a Robotics Engineering Master's student at <strong>Worcester Polytechnic Institute</strong> building <strong>real-time perception for autonomous vehicles in unstructured terrain</strong> — multi-sensor fusion, 3D vision, and deep models deployed in ROS2. As a Graduate Research Assistant at WPI's <strong>Autonomous Vehicle Mobility Institute (AVMI)</strong>, I work on terrain mobility estimation and sensor simulation for off-road autonomy; earlier, at the <strong>Perception and Autonomous Robotics (PEAR) Lab</strong>, I researched lensless stereo vision and Gaussian-splatting rendering. I'm currently seeking perception engineering roles.</p>
+        <p class="bio">I'm a Robotics Engineering Master's student at <strong>Worcester Polytechnic Institute</strong> building <strong>real-time perception for autonomous vehicles in unstructured terrain</strong> — multi-sensor fusion, 3D vision, and deep models deployed in ROS2. As a Graduate Research Assistant at WPI's <strong><a href="https://www.wpi.edu/research/centers/avmi">Autonomous Vehicle Mobility Institute (AVMI)</a></strong>, I work on terrain mobility estimation and sensor simulation for off-road autonomy; earlier, at the <strong><a href="https://pear.wpi.edu/">Perception and Autonomous Robotics (PEAR) Lab</a></strong>, I researched lensless stereo vision and Gaussian-splatting rendering. I'm currently seeking perception engineering roles.</p>
         <div class="hero-links">
           <a class="primary" href="mailto:simran.chauhanwpi@gmail.com">Email</a>
           <a href="images/SimranChauhan.pdf">Resume</a>
@@ -222,9 +228,9 @@
       </div>
       <div class="proj-body">
         <div class="ptitle">Lensless Bio-Inspired Stereo Vision for Micro Aerial Vehicles</div>
-        <div class="pmeta">WPI Perception and Autonomous Robotics Group (PeAR)</div>
+        <div class="pmeta">WPI Perception and Autonomous Robotics (PEAR) Lab</div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
-        <p>A from-scratch lensless stereo camera — pinholes and a microlens array over a bare CMOS, no lenses — for ultra-light MAVs, where two overlapping views land as one blended image to be split into stereo. I trained a dual-decoder U-Net on data I generated without ground truth via an on-screen homography calibration, then built a servo-multiplexed rig to capture real stereo with epipolar geometric supervision. I made the call to stop the project when the achievable disparity showed it couldn't beat a conventional stereo camera on cost — the premise that justified the whole approach.</p>
+        <p>Designed a single-pinhole lensless MLA camera that captures multiplexed overlapping views, formulating stereo reconstruction as a supervised demultiplexing problem. I generated 20K synthetic training pairs via a distance-invariant homography, then built a two-pinhole servo-actuated rig on an NVIDIA Jetson that selectively exposes two MLA lenslets to acquire aligned blended/left/right triplets for real-data supervision. Trained a ~50M-parameter dual-decoder U-Net (L1, SSIM, reconstruction, and epipolar + homography regularization) to demultiplex blended captures into stereo for depth, then made a principled call to stop when the sub-3mm baseline's achievable disparity couldn't beat conventional stereo on cost.</p>
         <div class="chips">
           <span class="chip">~50M-param U-Net</span>
           <span class="chip hot">~0.84 val SSIM</span>
@@ -245,9 +251,9 @@
       </div>
       <div class="proj-body">
         <div class="ptitle">Controllable Depth-of-Field in Gaussian Splatting (VizFlyt UAV Simulator)</div>
-        <div class="pmeta">WPI Perception and Autonomous Robotics Group (PeAR)</div>
+        <div class="pmeta">WPI Perception and Autonomous Robotics (PEAR) Lab</div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
-        <p>Added physically-based depth-of-field to a 3D Gaussian Splatting renderer (Splatfacto) inside VizFlyt, the lab's open-source photorealistic UAV simulator. Modeled thin-lens optics with adjustable focal distance and aperture, giving controllable focus/defocus for more realistic UAV perception testing.</p>
+        <p>Implemented controllable depth-of-field in a 3D Gaussian Splatting model (Splatfacto) with learnable focal-distance and aperture parameters jointly optimized alongside the scene geometry. Engineered a differentiable CUDA bokeh kernel (custom autograd.Function with hand-derived gradients) modeling physically accurate thin-lens defocus via a depth-based circle-of-confusion, composited in linear gamma-corrected space — extending the lab's open-source VizFlyt UAV simulator.</p>
         <div class="chips">
           <span class="chip">3D Gaussian Splatting</span>
           <span class="chip">thin-lens optics</span>
