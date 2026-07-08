@@ -91,7 +91,7 @@
   @media(max-width:760px){.carousel{width:100%;max-width:340px;height:auto;aspect-ratio:3/2}}
   .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
   .carousel .slide.active{opacity:1;pointer-events:auto}
-  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:cover;display:block}
+  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:contain;display:block}
   .carousel .dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
     display:flex;gap:6px;z-index:3}
   .carousel .dots button{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;
@@ -222,9 +222,9 @@
 
     <div class="proj">
       <div class="carousel" data-carousel>
-        <div class="slide active" data-type="image"><img src="images/lensless.jpg" alt="Lensless rig"></div>
-        <div class="slide" data-type="image"><img src="images/lensless_1.jpg" alt="Blended capture"></div>
-        <div class="slide" data-type="image"><img src="images/lensless_2.jpg" alt="Separated stereo pair"></div>
+        <div class="slide" data-type="image"><img src="images/lensless/lensless1.jpeg" alt="Micro-Aerial Drone"></div>
+        <div class="slide" data-type="image"><img src="images/lensless/pic2.jpeg" alt="Stereo-lensless rig"></div>
+        <div class="slide active" data-type="image"><img src="images/lensless/env2.jpeg" alt="Data Collection"></div>
       </div>
       <div class="proj-body">
         <div class="ptitle">Lensless Bio-Inspired Stereo Vision for Micro Aerial Vehicles</div>
