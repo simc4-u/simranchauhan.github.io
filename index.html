@@ -86,12 +86,12 @@
   .proj-media img,.proj-media video{width:100%;height:100%;object-fit:cover;display:block}
 
   /* ---- carousel (Option B: video self-times, images flip on 3s timer) ---- */
-  .carousel{position:relative;width:350px;height:250px;border-radius:8px;overflow:hidden;
+  .carousel{position:relative;width:370px;height:250px;border-radius:8px;overflow:hidden;
     background:var(--bg-soft);box-shadow:0 10px 26px -12px rgba(0,0,0,0.28)}
   @media(max-width:760px){.carousel{width:100%;max-width:340px;height:auto;aspect-ratio:3/2}}
   .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
   .carousel .slide.active{opacity:1;pointer-events:auto}
-  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:contain;display:block}
+  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:cover;          /* back to cover */object-position:center;    /* tweak per-slide if needed */display:block;}
   .carousel .dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
     display:flex;gap:6px;z-index:3}
   .carousel .dots button{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;
@@ -104,6 +104,10 @@
   .carousel:hover .navarrow{opacity:1}
   .carousel .navarrow.prev{left:8px}
   .carousel .navarrow.next{right:8px}
+  .carousel .slide.zoom img{
+  transform: scale(1.18);
+  transform-origin: center;
+}
   .proj-body .ptitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:21px;
     color:var(--ink);margin-bottom:5px;line-height:1.25}
   .proj-body .pmeta{font-size:12.5px;color:var(--ink-faint);margin-bottom:7px;font-family:'JetBrains Mono',monospace}
@@ -173,12 +177,11 @@
       <div class="carousel" data-carousel>
         <div class="slide active" data-type="video">
           <video loop muted playsinline preload="none" poster="images/terrain.jpg">
-            <source src="videos/Untitled design(4).mp4" type="video/mp4"></video>
+            <source src="videos/Untitled design(4).mp4" type="videotopo.mp4"></video>
         </div>
-        <div class="slide" data-type="image"><img src="images/dash.png" alt="Generated fractal terrain"></div>
         <div class="slide" data-type="image"><img src="images/terrainimported.png" alt="Terrain in Unreal Engine"></div>
-        <div class="slide" data-type="image"><img src="images/capture2med2.jpeg" alt="Terrain generated"></div>
-        <div class="slide" data-type="image"><img src="images/capture2med2pass.jpeg" alt="Mobility map output"></div>
+        <div class="slide zoom" data-type="image"><img src="images/capture2med2.jpeg" alt="Terrain generated"></div>
+        <div class="slide zoom" data-type="image"><img src="images/capture2med2pass.jpeg" alt="Mobility map output"></div>
       </div>
       <div class="proj-body">
         <div class="ptitle">Real-Time Heading-Aware Terrain Mobility Estimation for Off-Road AVs</div>
@@ -194,16 +197,11 @@
         </div>
       </div>
     </div>
-
     <div class="proj">
-      <div class="carousel" data-carousel>
-        <div class="slide active" data-type="video">
-          <video loop muted playsinline preload="none" poster="images/sensorsim.jpg">
-            <source src="videos/sensor_sim.mp4" type="video/mp4"></video>
-        </div>
-        <div class="slide" data-type="image"><img src="images/sensorsim_1.jpg" alt="LiDAR point cloud"></div>
-        <div class="slide" data-type="image"><img src="images/sensorsim_2.jpg" alt="Semantic camera output"></div>
-      </div>
+  <div class="carousel" data-carousel>
+    <div class="slide active" data-type="video"><video muted playsinline preload="none"><source src="videos/sensor1.mp4" type="video/mp4"></video></div>
+    <div class="slide" data-type="video"><video muted playsinline preload="none"><source src="videos/sensor2.mp4" type="video/mp4"></video></div>
+  </div>
       <div class="proj-body">
         <div class="ptitle">Sensor Simulation <span class="amp">&amp;</span> ROS2 Integration in Unreal Engine</div>
         <div class="pmeta">WPI Autonomous Vehicle Mobility Institute</div>
