@@ -180,17 +180,19 @@
       <div class="carousel letterbox" data-carousel>
         <div class="slide active" data-type="video">
           <video loop muted playsinline preload="none" poster="images/terrain.jpg">
-            <source src="videos/videotopo.mp4" type="video/mp4""></video>
+            <source src="videos/videotopo.mp4" type="video/mp4"></video>
         </div>
         <div class="slide" data-type="image"><img src="images/terrainimported.png" alt="Terrain in Unreal Engine"></div>
         <div class="slide zoom" data-type="image"><img src="images/capture2med2.jpeg" alt="Terrain generated"></div>
         <div class="slide zoom" data-type="image"><img src="images/capture2med2pass.jpeg" alt="Mobility map output"></div>
       </div>
       <div class="proj-body">
-        <div class="ptitle">Real-Time Heading-Aware Terrain Mobility Estimation for Off-Road AVs</div>
+        <div class="ptitle">Terrain Generation <span class="amp">&amp;</span> Real-Time Heading-Aware Traversability Estimation for Off-Road AVs</div>
         <div class="pmeta">WPI Autonomous Vehicle Mobility Institute · <span class="flag">paper in prep, targeting IEEE RA-L</span></div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
-        <p>Real-time off-road terrain mobility estimation: a physics-supervised CNN that turns a slow physics-simulation baseline (~30 min per multi-heading map) into millisecond-per-patch inference at 0.89 F1 on unseen terrain. Trained entirely on synthetic data from a custom fractal terrain generator rendered in Unreal Engine and physics-labeled, then deployed live as a ROS2 perception node publishing per-heading traversability inside a full off-road autonomy stack.</p>
+        <p>Deciding whether a vehicle can cross a patch of rough terrain usually means running a slow physics simulation — accurate, but far too heavy to guide a moving robot. I set out to make that judgment happen in real time, and for every direction the vehicle might travel, since a slope that's easy to climb head-on can be impassable at an angle.</p>
+        <p>To learn this without a fleet and a test course, I generated terrain synthetically with a multi-scale fractal generator built on Weierstrass–Mandelbrot layers, using fractal dimension to dial roughness from gentle to punishing and exporting 16-bit heightmaps into Unreal Engine. A deterministic solver then labeled each patch by comparing the vehicle's mobility radii against LiDAR-derived terrain passability radii — catching the underbody interference that slope and roughness heuristics quietly miss. Running the MRZR across 700 procedural terrains and four headings, then tiling into 128×128 patches, produced roughly 8,400 label grids that taught the model what "passable" really means.</p>
+        <p>The result is a geometry-supervised CNN that reproduces the solver's verdict in real time, collapsing multi-heading mobility-map generation from about 30 minutes to 10–20 ms per patch on GPU while holding 0.89 F1 and 0.88 recall on terrain it had never seen. It now runs live as a ROS2 perception node inside a full off-road autonomy stack alongside planning and control, publishing four per-heading traversability maps and an aggregated mobility map at ~3 Hz as the vehicle drives.</p>
         <div class="chips">
           <span class="chip hot">WM Fractal Terrain Generation</span>
           <span class="chip hot">real-time Traversability Map</span>
