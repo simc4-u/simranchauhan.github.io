@@ -254,7 +254,7 @@
         <div class="ptitle">Controllable Depth-of-Field in Gaussian Splatting (VizFlyt UAV Simulator)</div>
         <div class="pmeta">WPI Perception and Autonomous Robotics (PEAR) Lab</div>
         <a class="plink" href="ADD_REAL_GITHUB_LINK">project page →</a>
-        <p>Implemented controllable depth-of-field in a 3D Gaussian Splatting model (Splatfacto) with learnable focal-distance and aperture parameters jointly optimized alongside the scene geometry. Engineered a differentiable CUDA bokeh kernel (custom autograd.Function with hand-derived gradients) modeling physically accurate thin-lens defocus via a depth-based circle-of-confusion, composited in linear gamma-corrected space — extending the lab's open-source VizFlyt UAV simulator.</p>
+        <p>Real cameras have focus; most neural renderers don't. This work adds controllable, physically-accurate depth-of-field to 3D Gaussian Splatting (Splatfacto), with focal distance and aperture as learnable parameters optimized jointly with the scene geometry. At its core is a differentiable CUDA bokeh kernel — a custom autograd.Function with hand-derived gradients — modeling thin-lens defocus through a depth-based circle-of-confusion and compositing in linear, gamma-corrected space. Built as an extension to VizFlyt, the lab's open-source photorealistic UAV simulator, it lets simulated aerial cameras reproduce the focus behavior of real optics.</p>
         <div class="chips">
           <span class="chip">3D Gaussian Splatting</span>
           <span class="chip">thin-lens optics</span>
