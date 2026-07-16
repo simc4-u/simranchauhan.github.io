@@ -89,6 +89,8 @@
   .carousel{position:relative;width:400px;height:270px;border-radius:8px;overflow:hidden;
     background:var(--bg-soft);box-shadow:0 10px 26px -12px rgba(0,0,0,0.28)}
   @media(max-width:760px){.carousel{width:100%;max-width:340px;height:auto;aspect-ratio:5/3}}
+  .carousel.wide{aspect-ratio:16/9;height:auto}
+@media(max-width:760px){.carousel.wide{aspect-ratio:16/9}}
   .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
   .carousel .slide.active{opacity:1;pointer-events:auto}
   .carousel.letterbox video{
@@ -180,7 +182,7 @@
     <div class="sec-sub">Lab work at WPI AVMI &amp; PEAR — perception for off-road and aerial autonomy</div>
 
     <div class="proj">
-      <div class="carousel letterbox" data-carousel>
+      <div class="carousel wide" data-carousel>
         <div class="slide active" data-type="video">
           <video loop muted playsinline preload="none" poster="images/terrain.jpg">
             <source src="videos/videotopo.mp4" type="video/mp4"></video>
@@ -204,7 +206,7 @@
       </div>
     </div>
     <div class="proj">
-  <div class="carousel letterbox" data-carousel>
+  <div class="carousel wide" data-carousel>
     <div class="slide active" data-type="video"><video muted playsinline preload="none"><source src="videos/sensor3.mp4" type="video/mp4"></video></div>
     <div class="slide" data-type="video"><video muted playsinline preload="none"><source src="videos/sensor2.mp4" type="video/mp4"></video></div>
   </div>
