@@ -252,7 +252,6 @@
         <div class="slide active" data-type="video">
           <video loop muted playsinline preload="none" poster="images/gsplat.jpg">
             <source src="videos/straightvarying.mp4" type="video/mp4"></video>
-        </video>
         </div>
       </div>
       <div class="proj-body">
@@ -535,7 +534,23 @@
 
   function initCarousel(root){
     var slides = Array.prototype.slice.call(root.querySelectorAll('.slide'));
-    if(slides.length <= 1){ return; } // nothing to rotate
+    if(slides.length <= 1){
+  var lone = slides[0] && slides[0].querySelector('video');
+  if(lone){
+    var soloIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          if(lone.preload==='none'){ lone.preload='auto'; lone.load(); }
+          lone.play().catch(function(){});
+        } else {
+          lone.pause();
+        }
+      });
+    },{threshold:0.35});
+    soloIO.observe(root);
+  }
+  return;
+}
 
     // build dots
     var dots = document.createElement('div'); dots.className='dots';
