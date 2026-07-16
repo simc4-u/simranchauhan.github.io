@@ -85,15 +85,20 @@
   @media(max-width:760px){.proj-media{width:100%;max-width:340px;height:auto;aspect-ratio:3/2}}
   .proj-media img,.proj-media video{width:100%;height:100%;object-fit:cover;display:block}
 
-  /* ---- carousel (video self-times, images flip on 3s timer) ----
-     All carousels are 16:9 (400x225) so 16:9 videos fill the box
-     perfectly with no cropping and no white bars. */
-  .carousel{position:relative;width:400px;aspect-ratio:16/9;height:auto;border-radius:8px;overflow:hidden;
+  /* ---- carousel (Option B: video self-times, images flip on 3s timer) ---- */
+  .carousel{position:relative;width:400px;height:270px;border-radius:8px;overflow:hidden;
     background:var(--bg-soft);box-shadow:0 10px 26px -12px rgba(0,0,0,0.28)}
-  @media(max-width:760px){.carousel{width:100%;max-width:340px;height:auto;aspect-ratio:16/9}}
+  @media(max-width:760px){.carousel{width:100%;max-width:340px;height:auto;aspect-ratio:5/3}}
+  .carousel.wide{width:480px;height:270px}
+@media(max-width:760px){.carousel.wide{aspect-ratio:16/9}}
   .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
   .carousel .slide.active{opacity:1;pointer-events:auto}
-  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+  .carousel.letterbox video{
+  object-fit: contain !important;
+  background: var(--bg);
+}
+.carousel.letterbox .slide[data-type="video"]{background:var(--bg);}
+  .carousel .slide img,.carousel .slide video{width:100%;height:100%;object-fit:cover;          /* back to cover */object-position:center;    /* tweak per-slide if needed */display:block;}
   .carousel .dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
     display:flex;gap:6px;z-index:3}
   .carousel .dots button{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;
@@ -107,10 +112,10 @@
   .carousel .navarrow.prev{left:8px}
   .carousel .navarrow.next{right:8px}
   .carousel .slide.zoom img{
-    object-fit: cover;
-    transform: scale(1.9);
-    transform-origin: center;
-  }
+  object-fit: cover;
+  transform: scale(1.9);
+  transform-origin: center;
+}
   .proj-body .ptitle{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:21px;
     color:var(--ink);margin-bottom:5px;line-height:1.25}
   .proj-body .pmeta{font-size:12.5px;color:var(--ink-faint);margin-bottom:7px;font-family:'JetBrains Mono',monospace}
@@ -177,7 +182,7 @@
     <div class="sec-sub">Lab work at WPI AVMI &amp; PEAR — perception for off-road and aerial autonomy</div>
 
     <div class="proj">
-      <div class="carousel" data-carousel>
+      <div class="carousel wide" data-carousel>
         <div class="slide active" data-type="video">
           <video loop muted playsinline preload="none" poster="images/terrain.jpg">
             <source src="videos/videotopo.mp4" type="video/mp4"></video>
@@ -201,7 +206,7 @@
       </div>
     </div>
     <div class="proj">
-  <div class="carousel" data-carousel>
+  <div class="carousel wide" data-carousel>
     <div class="slide active" data-type="video"><video muted playsinline preload="none"><source src="videos/sensor3.mp4" type="video/mp4"></video></div>
     <div class="slide" data-type="video"><video muted playsinline preload="none"><source src="videos/sensor2.mp4" type="video/mp4"></video></div>
   </div>
@@ -223,10 +228,10 @@
 
     <div class="proj">
       <div class="carousel" data-carousel>
-        <div class="slide active" data-type="image"><img src="images/lensless/lensless1.png" alt="Micro-Aerial Drone"></div>
+        <div class="slide" data-type="image"><img src="images/lensless/lensless1.png" alt="Micro-Aerial Drone"></div>
         <div class="slide" data-type="image"><img src="images/lensless/pic2.jpeg" alt="Stereo-lensless rig"></div>
-        <div class="slide" data-type="image"><img src="images/lensless/env2.jpeg" alt="Data Collection"></div>
-        <div class="slide" data-type="image"><img src="images/lensless/lensless3.png" alt="Data Collection"></div>
+        <div class="slide active" data-type="image"><img src="images/lensless/env2.jpeg" alt="Data Collection"></div>
+        <div class="slide active" data-type="image"><img src="images/lensless/lensless3.png" alt="Data Collection"></div>
       </div>
       <div class="proj-body">
         <div class="ptitle">Lensless Bio-Inspired Stereo Vision for Micro Aerial Vehicles</div>
@@ -247,6 +252,7 @@
         <div class="slide active" data-type="video">
           <video loop muted playsinline preload="none" poster="images/gsplat.jpg">
             <source src="videos/straightvarying.mp4" type="video/mp4"></video>
+        </video>
         </div>
       </div>
       <div class="proj-body">
@@ -544,9 +550,9 @@
 
     // build arrows
     var prev=document.createElement('button'); prev.className='navarrow prev'; prev.type='button';
-    prev.setAttribute('aria-label','Previous'); prev.innerHTML='&#8249;';
+    prev.setAttribute('aria-label','Previous'); prev.innerHTML='‹';
     var next=document.createElement('button'); next.className='navarrow next'; next.type='button';
-    next.setAttribute('aria-label','Next'); next.innerHTML='&#8250;';
+    next.setAttribute('aria-label','Next'); next.innerHTML='›';
     prev.addEventListener('click',function(){ go((cur-1+slides.length)%slides.length,true); });
     next.addEventListener('click',function(){ go((cur+1)%slides.length,true); });
     root.appendChild(prev); root.appendChild(next);
